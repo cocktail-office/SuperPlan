@@ -1,0 +1,110 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "HCOMP_REC"; 
+            externalType = NUMBER; 
+            name = hcompRec; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "vMaquetteAp.mapKey"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = leMapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_AP_KEY"; 
+            externalType = NUMBER; 
+            name = resaApKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ggrpKey, hcompRec, mapKey, resaApKey, resaKey, leMapKey); 
+    className = "org.cocktail.superplan.server.metier.ReservationAp"; 
+    classProperties = (
+        ggrpKey, 
+        hcompRec, 
+        maquetteAp, 
+        reservation, 
+        scolGroupeGrp, 
+        vMaquetteAp, 
+        leMapKey
+    ); 
+    externalName = "EDTSCOL.RESERVATION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ggrpKey, 
+            hcompRec, 
+            maquetteAp, 
+            reservation, 
+            scolGroupeGrp, 
+            vMaquetteAp, 
+            leMapKey
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ReservationAp"; 
+    }; 
+    name = ReservationAp; 
+    primaryKeyAttributes = (resaApKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }, 
+        {
+            destination = VMaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = vMaquetteAp; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

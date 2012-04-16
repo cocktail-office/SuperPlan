@@ -1,0 +1,228 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "C_TYPE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cTypeStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_ACCES"; 
+            externalType = VARCHAR2; 
+            name = grpAcces; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_ALIAS"; 
+            externalType = VARCHAR2; 
+            name = grpAlias; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_MOTS_CLEFS"; 
+            externalType = VARCHAR2; 
+            name = grpMotsClefs; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_OWNER"; 
+            externalType = NUMBER; 
+            name = grpOwner; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_RESPONSABILITE"; 
+            externalType = VARCHAR2; 
+            name = grpResponsabilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_RESPONSABLE"; 
+            externalType = NUMBER; 
+            name = grpResponsable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        cStructurePere, 
+        cTypeStructure, 
+        grpAcces, 
+        grpAlias, 
+        grpMotsClefs, 
+        grpOwner, 
+        grpResponsabilite, 
+        grpResponsable, 
+        lcStructure, 
+        llStructure, 
+        persId, 
+        temValide
+    ); 
+    className = "org.cocktail.superplan.server.metier.StructureUlr"; 
+    classProperties = (
+        cStructure, 
+        cStructurePere, 
+        cTypeStructure, 
+        fils, 
+        grpAcces, 
+        grpAlias, 
+        grpMotsClefs, 
+        grpResponsabilite, 
+        lcStructure, 
+        llStructure, 
+        pere, 
+        persId, 
+        repartStructures, 
+        repartTypeGroupe, 
+        responsable, 
+        secretariats, 
+        structureUlr, 
+        temValide
+    ); 
+    externalName = "GRHUM.STRUCTURE_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            cTypeStructure, 
+            fils, 
+            grpAcces, 
+            grpAlias, 
+            grpMotsClefs, 
+            grpResponsabilite, 
+            lcStructure, 
+            llStructure, 
+            pere, 
+            persId, 
+            repartStructures, 
+            repartTypeGroupe, 
+            responsable, 
+            secretariats, 
+            structureUlr, 
+            temValide
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.StructureUlr"; 
+    }; 
+    name = StructureUlr; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = StructureUlr; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructurePere; sourceAttribute = cStructure; }); 
+            name = fils; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = pere; 
+        }, 
+        {
+            destination = RepartStructure; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = repartStructures; 
+        }, 
+        {
+            destination = RepartTypeGroupe; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = repartTypeGroupe; 
+        }, 
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = grpResponsable; }); 
+            name = responsable; 
+        }, 
+        {
+            destination = Secretariat; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = secretariats; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = structureUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

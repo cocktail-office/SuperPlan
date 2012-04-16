@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "TGRP_CODE"; 
+            externalType = VARCHAR2; 
+            name = tgrpCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, dCreation, dModification, tgrpCode); 
+    className = "org.cocktail.superplan.server.metier.RepartTypeGroupe"; 
+    classProperties = (dCreation, dModification, tgrpCode); 
+    externalName = "GRHUM.REPART_TYPE_GROUPE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dCreation, dModification, tgrpCode); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.RepartTypeGroupe"; 
+    }; 
+    name = RepartTypeGroupe; 
+    primaryKeyAttributes = (cStructure); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

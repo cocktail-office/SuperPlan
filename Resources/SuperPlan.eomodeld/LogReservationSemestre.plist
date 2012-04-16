@@ -1,0 +1,82 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = logOldGgrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_HCOMP_REC"; 
+            externalType = NUMBER; 
+            name = logOldHcompRec; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = logOldMsemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_SEMESTRE_KEY"; 
+            externalType = NUMBER; 
+            name = logSemestreKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        logKey, 
+        logOldGgrpKey, 
+        logOldHcompRec, 
+        logOldMsemKey, 
+        logOldResaKey, 
+        logSemestreKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.LogReservationSemestre"; 
+    classProperties = (logOldHcompRec, logOldResaKey, maquetteSemestre, scolGroupeGrp); 
+    externalName = "EDTSCOL.LOG_RESERVATION_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (logOldHcompRec, logOldResaKey, maquetteSemestre, scolGroupeGrp); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationSemestre"; 
+    }; 
+    name = LogReservationSemestre; 
+    primaryKeyAttributes = (logSemestreKey); 
+    relationships = (
+        {
+            destination = MaquetteSemestre; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = logOldMsemKey; }); 
+            name = maquetteSemestre; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = logOldGgrpKey; }); 
+            name = scolGroupeGrp; 
+        }
+    ); 
+}

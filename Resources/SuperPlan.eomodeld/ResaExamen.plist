@@ -1,0 +1,70 @@
+{
+    attributes = (
+        {
+            columnName = "EENT_KEY"; 
+            externalType = NUMBER; 
+            name = eentKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EXAM_KEY"; 
+            externalType = NUMBER; 
+            name = examKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (eentKey, examKey, ggrpKey, resaKey); 
+    className = "org.cocktail.superplan.server.metier.ResaExamen"; 
+    classProperties = (examenEntete, ggrpKey, reservation, scolGroupeGrp); 
+    externalName = "EDTSCOL.RESA_EXAMEN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (examenEntete, ggrpKey, reservation, scolGroupeGrp); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaExamen"; 
+    }; 
+    name = ResaExamen; 
+    primaryKeyAttributes = (examKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ExamenEntete; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eentKey; sourceAttribute = eentKey; }); 
+            name = examenEntete; 
+        }, 
+        {
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

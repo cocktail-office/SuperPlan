@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {valider = id; }; 
+            CLASS = "edtscol.client.ChoixImpression"; 
+            LANGUAGE = Java; 
+            OUTLETS = {cbImpressionHoraires = id; choixType = id; editionDT = id; }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

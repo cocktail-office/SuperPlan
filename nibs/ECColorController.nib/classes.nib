@@ -1,0 +1,30 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {choisirCouleur = id; fermer = id; rechercherEC = id; }; 
+            CLASS = "edtscol.client.ECColorController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bColor = id; 
+                bFermer = id; 
+                comboAnnees = id; 
+                comboParcours = id; 
+                comboSemestre = id; 
+                eodHabilitation = id; 
+                listEC = id; 
+                matPrefDip = id; 
+                tDiplome = id; 
+                tGrade = id; 
+                tableHabilitation = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.GenericListHandler"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

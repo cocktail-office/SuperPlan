@@ -1,0 +1,23 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {selectionnerEc = id; }; 
+            CLASS = "edtscol.client.recherche.ExamenController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bSelectionner = id; 
+                boxExamen = id; 
+                comboAnnees = id; 
+                comboGroupes = id; 
+                eodExamenEnt = id; 
+                eodMaquetteEc = id; 
+                tEc = id; 
+                tableExamenEnt = id; 
+                tableMaquetteEc = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

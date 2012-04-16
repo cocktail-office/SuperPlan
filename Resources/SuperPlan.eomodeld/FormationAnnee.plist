@@ -1,0 +1,59 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_COURANTE"; 
+            externalType = VARCHAR2; 
+            name = fannCourante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FANN_DEBUT"; 
+            externalType = NUMBER; 
+            name = fannDebut; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_FIN"; 
+            externalType = NUMBER; 
+            name = fannFin; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannCourante, fannDebut, fannFin, fannKey); 
+    className = "org.cocktail.superplan.server.metier.FormationAnnee"; 
+    classProperties = (fannCourante, fannDebut, fannFin, fannKey, resaCouleurEc); 
+    externalName = "SCOLARITE.SCOL_FORMATION_ANNEE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannCourante, fannDebut, fannFin, fannKey, resaCouleurEc); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.FormationAnnee"; 
+    }; 
+    name = FormationAnnee; 
+    primaryKeyAttributes = (fannKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ResaCouleurEc; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = resaCouleurEc; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

@@ -1,0 +1,58 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "FGRA_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = fgraAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FGRA_CODAGE"; 
+            externalType = VARCHAR2; 
+            name = fgraCodage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "FGRA_CODE"; 
+            externalType = VARCHAR2; 
+            name = fgraCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FGRA_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fgraLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FGRA_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = fgraValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (fgraAbreviation, fgraCodage, fgraCode, fgraLibelle, fgraValidite); 
+    className = "org.cocktail.superplan.server.metier.ScolFormationGrade"; 
+    classProperties = (fgraAbreviation, fgraCodage, fgraLibelle, fgraValidite); 
+    externalName = "SCOLARITE.SCOL_FORMATION_GRADE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fgraAbreviation, fgraCodage, fgraLibelle, fgraValidite); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolFormationGrade"; 
+    }; 
+    name = FormationGrade; 
+    primaryKeyAttributes = (fgraCode); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

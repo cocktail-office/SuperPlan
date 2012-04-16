@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "FFIL_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = ffilAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "FFIL_CODE"; 
+            externalType = VARCHAR2; 
+            name = ffilCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FFIL_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = ffilLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FFIL_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = ffilValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (ffilAbreviation, ffilCode, ffilLibelle, ffilValidite); 
+    className = "org.cocktail.superplan.server.metier.ScolFormationFiliere"; 
+    classProperties = (ffilAbreviation, ffilLibelle, ffilValidite); 
+    externalName = "SCOLARITE.SCOL_FORMATION_FILIERE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ffilAbreviation, ffilLibelle, ffilValidite); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolFormationFiliere"; 
+    }; 
+    name = FormationFiliere; 
+    primaryKeyAttributes = (ffilCode); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

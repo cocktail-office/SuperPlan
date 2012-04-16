@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "COB_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = cobLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "COB_ORDRE"; 
+            externalType = NUMBER; 
+            name = cobOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cobLibelle, cobOrdre); 
+    className = "org.cocktail.superplan.server.metier.CategObjet"; 
+    classProperties = (cobLibelle, typeObjetMajs, typeObjets); 
+    externalName = "EDTSCOL.CATEG_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cobLibelle, typeObjetMajs, typeObjets); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CategObjet"; 
+    }; 
+    name = CategObjet; 
+    primaryKeyAttributes = (cobOrdre); 
+    relationships = (
+        {
+            destination = TypeObjetMaj; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cobOrdre; sourceAttribute = cobOrdre; }); 
+            name = typeObjetMajs; 
+        }, 
+        {
+            destination = TypeObjet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cobOrdre; sourceAttribute = cobOrdre; }); 
+            name = typeObjets; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

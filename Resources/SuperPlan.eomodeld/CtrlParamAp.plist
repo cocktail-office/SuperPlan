@@ -1,0 +1,266 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CPA_DIM_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaDimHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_DIM_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaDimHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_DUREE"; 
+            externalType = NUMBER; 
+            name = cpaDuree; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_JEU_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaJeuHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_JEU_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaJeuHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CPA_KEY"; 
+            externalType = NUMBER; 
+            name = cpaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_LUN_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaLunHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_LUN_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaLunHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_MAR_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaMarHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_MAR_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaMarHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_MER_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaMerHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_MER_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaMerHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_SAM_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaSamHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_SAM_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaSamHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_VEN_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cpaVenHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPA_VEN_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cpaVenHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cpaDimHeureDeb, 
+        cpaDimHeureFin, 
+        cpaDuree, 
+        cpaJeuHeureDeb, 
+        cpaJeuHeureFin, 
+        cpaKey, 
+        cpaLunHeureDeb, 
+        cpaLunHeureFin, 
+        cpaMarHeureDeb, 
+        cpaMarHeureFin, 
+        cpaMerHeureDeb, 
+        cpaMerHeureFin, 
+        cpaSamHeureDeb, 
+        cpaSamHeureFin, 
+        cpaVenHeureDeb, 
+        cpaVenHeureFin, 
+        ggrpKey, 
+        mapKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.CtrlParamAp"; 
+    classProperties = (
+        cpaDimHeureDeb, 
+        cpaDimHeureFin, 
+        cpaDuree, 
+        cpaJeuHeureDeb, 
+        cpaJeuHeureFin, 
+        cpaLunHeureDeb, 
+        cpaLunHeureFin, 
+        cpaMarHeureDeb, 
+        cpaMarHeureFin, 
+        cpaMerHeureDeb, 
+        cpaMerHeureFin, 
+        cpaSamHeureDeb, 
+        cpaSamHeureFin, 
+        cpaVenHeureDeb, 
+        cpaVenHeureFin, 
+        ctrlParamApIndividus, 
+        ctrlParamApObjets, 
+        ctrlParamApSalleChoixs, 
+        ctrlParamApSalles, 
+        maquetteAp, 
+        scolGroupeGrp
+    ); 
+    externalName = "EDTSCOL.CTRL_PARAM_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cpaDimHeureDeb, 
+            cpaDimHeureFin, 
+            cpaDuree, 
+            cpaJeuHeureDeb, 
+            cpaJeuHeureFin, 
+            cpaLunHeureDeb, 
+            cpaLunHeureFin, 
+            cpaMarHeureDeb, 
+            cpaMarHeureFin, 
+            cpaMerHeureDeb, 
+            cpaMerHeureFin, 
+            cpaSamHeureDeb, 
+            cpaSamHeureFin, 
+            cpaVenHeureDeb, 
+            cpaVenHeureFin, 
+            ctrlParamApIndividus, 
+            ctrlParamApObjets, 
+            ctrlParamApSalleChoixs, 
+            ctrlParamApSalles, 
+            maquetteAp, 
+            scolGroupeGrp
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlParamAp"; 
+    }; 
+    name = CtrlParamAp; 
+    primaryKeyAttributes = (cpaKey); 
+    relationships = (
+        {
+            destination = CtrlParamApIndividu; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApIndividus; 
+        }, 
+        {
+            destination = CtrlParamApObjet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApObjets; 
+        }, 
+        {
+            destination = CtrlParamApSalleChoix; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApSalleChoixs; 
+        }, 
+        {
+            destination = CtrlParamApSalle; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamApSalles; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }
+    ); 
+}

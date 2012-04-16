@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "LOT_KEY"; 
+            externalType = NUMBER; 
+            name = lotKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (lotKey, salNumero); 
+    className = "org.cocktail.superplan.server.metier.RepartLotSalle"; 
+    classProperties = (salle, lotSalle); 
+    externalName = "EDTSCOL.REPART_LOT_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (salle, lotSalle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.RepartLotSalle"; 
+    }; 
+    name = RepartLotSalle; 
+    primaryKeyAttributes = (salNumero, lotKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = LotSalle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lotKey; sourceAttribute = lotKey; }); 
+            name = lotSalle; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+}

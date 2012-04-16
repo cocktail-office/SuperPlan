@@ -1,0 +1,75 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_AP_KEY"; 
+            externalType = NUMBER; 
+            name = logApKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = logOldGgrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_HCOMP_REC"; 
+            externalType = NUMBER; 
+            name = logOldHcompRec; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_MAP_KEY"; 
+            externalType = NUMBER; 
+            name = logOldMapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (logApKey, logKey, logOldGgrpKey, logOldHcompRec, logOldMapKey, logOldResaKey); 
+    className = "org.cocktail.superplan.server.metier.LogReservationAp"; 
+    classProperties = (logOldHcompRec, logOldResaKey, maquetteAp, scolGroupeGrp); 
+    externalName = "EDTSCOL.LOG_RESERVATION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (logOldHcompRec, logOldResaKey, maquetteAp, scolGroupeGrp); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationAp"; 
+    }; 
+    name = LogReservationAp; 
+    primaryKeyAttributes = (logApKey); 
+    relationships = (
+        {
+            destination = MaquetteAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = logOldMapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = logOldGgrpKey; }); 
+            name = scolGroupeGrp; 
+        }
+    ); 
+}

@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CAT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = catLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 60; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CAT_LIBELLE2"; 
+            externalType = VARCHAR2; 
+            name = catLibelle2; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 60; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CAT_LISTE_ROUGE"; 
+            externalType = CHAR; 
+            name = catListeRouge; 
+            valueClassName = NSString; 
+            valueType = c; 
+            width = 1; 
+        }, 
+        {
+            columnName = "CAT_NUMERO"; 
+            externalType = NUMBER; 
+            name = catNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (catLibelle, catLibelle2, catListeRouge, catNumero); 
+    className = "org.cocktail.superplan.server.metier.SupannCategorie"; 
+    classProperties = (catLibelle, catLibelle2, catListeRouge, catNumero); 
+    externalName = "GRHUM.SUPANN_CATEGORIE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (catLibelle, catLibelle2, catListeRouge, catNumero); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.SupannCategorie"; 
+    }; 
+    name = SupannCategorie; 
+    primaryKeyAttributes = (catNumero); 
+}

@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            columnName = "CPA_KEY"; 
+            externalType = NUMBER; 
+            name = cpaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CPAS_KEY"; 
+            externalType = NUMBER; 
+            name = cpasKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cpaKey, cpasKey, salNumero); 
+    className = "org.cocktail.superplan.server.metier.CtrlParamApSalle"; 
+    classProperties = (ctrlParamAp, salle); 
+    externalName = "EDTSCOL.CTRL_PARAM_AP_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ctrlParamAp, salle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlParamApSalle"; 
+    }; 
+    name = CtrlParamApSalle; 
+    primaryKeyAttributes = (cpasKey); 
+    relationships = (
+        {
+            destination = CtrlParamAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamAp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+}

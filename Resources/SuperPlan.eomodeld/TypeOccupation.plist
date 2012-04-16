@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "TOC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tocLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "TOC_ORDRE"; 
+            externalType = NUMBER; 
+            name = tocOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (tocLibelle, tocOrdre); 
+    className = "org.cocktail.superplan.server.metier.TypeOccupation"; 
+    classProperties = (tocLibelle, toDetailPourcentages); 
+    externalName = "GRHUM.TYPE_OCCUPATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (tocLibelle, tocOrdre); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.TypeOccupation"; 
+    }; 
+    name = TypeOccupation; 
+    primaryKeyAttributes = (tocOrdre); 
+    relationships = (
+        {
+            destination = DetailPourcentage; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tocOrdre; sourceAttribute = tocOrdre; }); 
+            name = toDetailPourcentages; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

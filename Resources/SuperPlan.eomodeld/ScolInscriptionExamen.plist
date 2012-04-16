@@ -1,0 +1,183 @@
+{
+    attributes = (
+        {
+            columnName = "EENT_KEY"; 
+            externalType = NUMBER; 
+            name = eentKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IEENT_ABSENCE"; 
+            externalType = NUMBER; 
+            name = ieentAbsence; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_ANONYMAT"; 
+            externalType = VARCHAR2; 
+            name = ieentAnonymat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_CODE"; 
+            externalType = VARCHAR2; 
+            name = ieentCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 12; 
+        }, 
+        {
+            columnName = "IEENT_KEY"; 
+            externalType = NUMBER; 
+            name = ieentKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_NOM"; 
+            externalType = VARCHAR2; 
+            name = ieentNom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_NOTE"; 
+            externalType = NUMBER; 
+            name = ieentNote; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_NOTE_DEFINITIVE"; 
+            externalType = NUMBER; 
+            name = ieentNoteDefinitive; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_PLACE"; 
+            externalType = VARCHAR2; 
+            name = ieentPlace; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_PRENOM"; 
+            externalType = VARCHAR2; 
+            name = ieentPrenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IEENT_RANG"; 
+            externalType = NUMBER; 
+            name = ieentRang; 
+            precision = 3; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IEENT_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = ieentValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        eentKey, 
+        idiplNumero, 
+        ieentAbsence, 
+        ieentAnonymat, 
+        ieentCode, 
+        ieentKey, 
+        ieentNom, 
+        ieentNote, 
+        ieentNoteDefinitive, 
+        ieentPlace, 
+        ieentPrenom, 
+        ieentRang, 
+        ieentValidite, 
+        salNumero
+    ); 
+    className = "org.cocktail.superplan.server.metier.ScolInscriptionExamen"; 
+    classProperties = (
+        eentKey, 
+        idiplNumero, 
+        ieentAbsence, 
+        ieentAnonymat, 
+        ieentCode, 
+        ieentKey, 
+        ieentNom, 
+        ieentNote, 
+        ieentNoteDefinitive, 
+        ieentPlace, 
+        ieentPrenom, 
+        ieentRang, 
+        ieentValidite, 
+        salNumero
+    ); 
+    externalName = "SCOLARITE.SCOL_INSCRIPTION_EXAMEN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            eentKey, 
+            idiplNumero, 
+            ieentAbsence, 
+            ieentAnonymat, 
+            ieentCode, 
+            ieentKey, 
+            ieentNom, 
+            ieentNote, 
+            ieentNoteDefinitive, 
+            ieentPlace, 
+            ieentPrenom, 
+            ieentRang, 
+            ieentValidite, 
+            salNumero
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolInscriptionExamen"; 
+    }; 
+    name = ScolInscriptionExamen; 
+    primaryKeyAttributes = (ieentKey); 
+}

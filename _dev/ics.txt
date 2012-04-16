@@ -1,0 +1,57 @@
+Flux ICS / Direct Actions (en direct ou pour le serveur de planning) dans SuperPlan :
+
+- Pour un individu : renvoie le planning complet de l'individu, y compris son agenda étudiant (s'il est étudiant), c'est à dire selon ses inscriptions pédagogiques et éventuellement ses inscriptions aux groupes.
+   . Pour le serveur de planning : méthode "agendaPourPeriode" (clé login)
+   . En direct dans SuperPlan : méthode "edtPourPeriode" avec en paramètres :
+        1 : noIndividu (obligatoire)
+        2 : debut (facultatif)
+        3 : fin (facultatif)
+        (debut et fin sont à renseigner conjointement ou pas du tout, si pas de date, par défaut prend 1 an autour de la date du jour (= -6 mois / +6 mois))
+      Exemple :
+        http://blabla.fr/cgi-bin/WebObjects/SuperPlan.woa/wa/edtPourPeriode?noIndividu=1234&debut=01/09/2010%2008:00&fin=31/12/2010%2020:00
+
+- Pour une formation : renvoie le planning complet pour l'année (2 semestres), pour le parcours demandé et éventuellement en plus le parcours commun (si celui demandé n'est pas le parcours commun).
+   . Pour le serveur de planning : méthode "agendaSemestre" (clé mrsemKey)
+   . En direct dans SuperPlan : méthode "edtSemestre" avec en paramètre :
+      1 : mrsemKey (obligatoire) : la clé de la table scol_maquette_repartition_sem
+
+- Pour une salle :
+   . Pour le serveur de planning : pas encore implémenté...
+   . En direct dans SuperPlan : méthode "edtSalle" avec en paramètres :
+        1 : salNumero (obligatoire)
+        2 : debut (facultatif)
+        3 : fin (facultatif)
+        (debut et fin sont à renseigner conjointement ou pas du tout, si pas de date, par défaut prend 1 an autour de la date du jour (= -6 mois / +6 mois))
+
+
+
+----------------------------------------------------------------------------------------
+Exemple de configuration de ServeurPlanning pour utiliser la méthode agendaSemestre :
+----------------------------------------------------------------------------------------
+
+Les données sont stockées dans SAUT.APPLICATION (pour définir l'application SuperPlan qui servira à répondre au serveur de planning)
+et dans les tables GRHUM.SP_xxx où sont définies les méthodes client et serveur du serveur de planning.
+ATTENTION : ce n'est pas un script tout prêt à passer, mais juste un exemple, les clés ici sont éventuellement à adapter à la base locale.
+  
+  -- Ajout d'une application SuperPlan dédiée au serveur de planning (si ce n'est pas déjà fait)
+  -- on peut aussi utiliser l'instance de SuperPlan normale... au risque de faire ramer les utilisateurs si le serveur de planning la sollicite beaucoup,
+  -- d'où l'intérêt d'avoir une instance séparée dédiée, sur laquelle aucun utilisateur ne lancera l'application en java-client...
+  Insert into SAUT.APPLICATION Values
+    ('101', 'SuperPlan pour Serveur de Planning uniquement', 'SuperPlanServeurPlanning', NULL, 'http://apps.univ.fr/cgi-bin/WebObjects/SuperPlanServeurPlanning.woa/eowebstart/com.webobjects.eodistribution._EOWebStartAction/webStart/JavaClient.jnlp', 'login', NULL, 'WS', 7);
+
+  -- Ajout de la méthode
+  Insert into GRHUM.SP_METHODE Values (111, 'agendaSemestre', 'DA pour ics d''un semestre depuis SuperPlan', 1, sysdate, sysdate);
+  
+  -- Ajout d'une méthode serveur, même clé que précédemment
+  -- (le 3ème champ doit correspondre à la clé de SAUT.APPLICATION créé ci-dessus, ici '101' dans notre exemple)
+  Insert into GRHUM.SP_MET_SERVEUR Values (111, '/wa/agendaSemestre?', '101', 1, 31, sysdate, sysdate);
+  
+  -- Ajout des paramètres pour cette méthode (le 3ème paramètre est la clé de la méthode créée précédemment) 
+  Insert into GRHUM.SP_PARAM Values ('mrsemKey', 1, 111, sysdate, sysdate);
+  Insert into GRHUM.SP_PARAM Values ('debut', 2, 111, sysdate, sysdate);
+  Insert into GRHUM.SP_PARAM Values ('fin', 3, 111, sysdate, sysdate);
+  
+  -- Ajout pour relier cette méthode à la méthode du serveur planning qui doit renvoyer ça, ici la méthode de clé 7 c'est à dire iCalendarOccupations chez nous)
+  -- ATTENTION : la valeur du champ idKey (ici 4) indique le type de ressource, voir le commentaire du champ pour les autres valeurs...
+  Insert into GRHUM.SP_REPARTITION Values (7, 111, 4, sysdate, sysdate);
+

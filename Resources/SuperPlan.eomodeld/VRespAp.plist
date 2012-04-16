@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MBEC_TYPE"; 
+            externalType = VARCHAR2; 
+            name = mbecType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, mapKey, mbecType, noIndividu); 
+    className = "org.cocktail.superplan.server.metier.VRespAp"; 
+    classProperties = (ap, fannKey, individu); 
+    externalName = "EDTSCOL.V_RESP_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ap, fannKey, individu); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VRespAp"; 
+    }; 
+    name = VRespAp; 
+    primaryKeyAttributes = (mapKey, noIndividu); 
+    relationships = (
+        {
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = ap; 
+        }, 
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individu; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

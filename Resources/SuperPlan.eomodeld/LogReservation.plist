@@ -1,0 +1,226 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_ACTION"; 
+            externalType = VARCHAR2; 
+            name = logAction; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "LOG_DATE"; 
+            externalType = DATE; 
+            name = logDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = logMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "LOG_NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = logNoIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_D_CREATION"; 
+            externalType = DATE; 
+            name = logOldDCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "LOG_OLD_D_MODIFICATION"; 
+            externalType = DATE; 
+            name = logOldDModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "LOG_OLD_NO_INDIVIDU_CLIENT"; 
+            externalType = NUMBER; 
+            name = logOldNoIndividuClient; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_RESA_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = logOldResaCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            columnName = "LOG_OLD_TLOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = logOldTlocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "LOG_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        logAction, 
+        logDate, 
+        logKey, 
+        logMotif, 
+        logNoIndividu, 
+        logOldDCreation, 
+        logOldDModification, 
+        logOldNoIndividuClient, 
+        logOldResaCommentaire, 
+        logOldTlocCode, 
+        logResaKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.LogReservation"; 
+    classProperties = (
+        individuLogAgent, 
+        individuOldAgent, 
+        logAction, 
+        logDate, 
+        logMotif, 
+        logOldDCreation, 
+        logOldDModification, 
+        logOldResaCommentaire, 
+        logOldTlocCode, 
+        logResaKey, 
+        logReservationAps, 
+        logReservationExamens, 
+        logReservationObjets, 
+        logReservationOccupants, 
+        logReservationPeriods, 
+        logReservationSalles, 
+        logReservationSemestres, 
+        typeLocation
+    ); 
+    externalName = "EDTSCOL.LOG_RESERVATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            individuLogAgent, 
+            individuOldAgent, 
+            logAction, 
+            logDate, 
+            logMotif, 
+            logOldDCreation, 
+            logOldDModification, 
+            logOldResaCommentaire, 
+            logOldTlocCode, 
+            logResaKey, 
+            logReservationAps, 
+            logReservationExamens, 
+            logReservationObjets, 
+            logReservationOccupants, 
+            logReservationPeriods, 
+            logReservationSalles, 
+            logReservationSemestres, 
+            typeLocation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservation"; 
+    }; 
+    name = LogReservation; 
+    primaryKeyAttributes = (logKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = logNoIndividu; }); 
+            name = individuLogAgent; 
+        }, 
+        {
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = noIndividu; sourceAttribute = logOldNoIndividuClient; }
+            ); 
+            name = individuOldAgent; 
+        }, 
+        {
+            destination = LogReservationAp; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationAps; 
+        }, 
+        {
+            destination = LogReservationExamen; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationExamens; 
+        }, 
+        {
+            destination = LogReservationObjet; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationObjets; 
+        }, 
+        {
+            destination = LogReservationOccupant; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationOccupants; 
+        }, 
+        {
+            destination = LogReservationPeriod; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationPeriods; 
+        }, 
+        {
+            destination = LogReservationSalle; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationSalles; 
+        }, 
+        {
+            destination = LogReservationSemestre; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logKey; sourceAttribute = logKey; }); 
+            name = logReservationSemestres; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = TypeLocation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tlocCode; sourceAttribute = logOldTlocCode; }); 
+            name = typeLocation; 
+        }
+    ); 
+}

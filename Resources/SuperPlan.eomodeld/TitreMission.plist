@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            columnName = "TIT_CTRL_DATES"; 
+            externalType = NUMBER; 
+            name = titCtrlDates; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TIT_ETAT"; 
+            externalType = VARCHAR2; 
+            name = titEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "TIT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = titLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "TIT_ORDRE"; 
+            externalType = NUMBER; 
+            name = titOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (titCtrlDates, titEtat, titLibelle, titOrdre); 
+    className = "org.cocktail.superplan.server.metier.TitreMission"; 
+    classProperties = (titCtrlDates, titEtat, titLibelle); 
+    externalName = "jefy_mission.TITRE_MISSION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (titCtrlDates, titEtat, titLibelle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.TitreMission"; 
+    }; 
+    name = TitreMission; 
+    primaryKeyAttributes = (titOrdre); 
+}

@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {
+            columnName = "MSG_LIB"; 
+            externalType = VARCHAR2; 
+            name = msgLib; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "MSG_REPEAT"; 
+            externalType = VARCHAR2; 
+            name = msgRepeat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (msgLib, msgRepeat); 
+    className = "org.cocktail.superplan.server.metier.Messages"; 
+    classProperties = (msgLib, msgRepeat); 
+    externalName = "EDTSCOL.MESSAGES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (msgLib, msgRepeat); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Messages"; 
+    }; 
+    name = Messages; 
+    primaryKeyAttributes = (msgLib, msgRepeat); 
+}

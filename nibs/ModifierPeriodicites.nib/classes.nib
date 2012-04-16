@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; toutSelect = id; valider = id; }; 
+            CLASS = "edtscol.client.ModifierPeriodicites"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                checkToutSelect = id; 
+                eodPeriodicites = id; 
+                tInfos = id; 
+                tablePeriodicites = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

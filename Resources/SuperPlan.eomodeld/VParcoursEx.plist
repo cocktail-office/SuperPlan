@@ -1,0 +1,109 @@
+{
+    attributes = (
+        {
+            columnName = "EENT_KEY"; 
+            externalType = NUMBER; 
+            name = eentKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDIP_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdipCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (eentKey, fannKey, fdipCode, fspnKey, mecKey, mparKey, msemKey); 
+    className = "org.cocktail.superplan.server.metier.VParcoursEx"; 
+    classProperties = (diplome, examenEntete, parcours, semestre, specialisation); 
+    externalName = "EDTSCOL.V_PARCOURS_EX"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (diplome, examenEntete, parcours, semestre, specialisation); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VParcoursEx"; 
+    }; 
+    name = VParcoursEx; 
+    primaryKeyAttributes = (eentKey); 
+    relationships = (
+        {
+            destination = FormationDiplome; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdipCode; sourceAttribute = fdipCode; }); 
+            name = diplome; 
+        }, 
+        {
+            destination = ExamenEntete; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eentKey; sourceAttribute = eentKey; }); 
+            name = examenEntete; 
+        }, 
+        {
+            destination = MaquetteParcours; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mparKey; sourceAttribute = mparKey; }); 
+            name = parcours; 
+        }, 
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }, 
+        {
+            destination = FormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = specialisation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

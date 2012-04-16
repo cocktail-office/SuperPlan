@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            columnName = "DATE_DEB"; 
+            externalType = DATE; 
+            name = dateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DATE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = HCOMP; 
+            externalType = NUMBER; 
+            name = hcomp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PER_KEY"; 
+            externalType = NUMBER; 
+            name = perKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (dateDeb, dateFin, hcomp, perKey, resaKey); 
+    className = "org.cocktail.superplan.server.metier.Periodicite"; 
+    classProperties = (dateDeb, dateFin, hcomp, reservation); 
+    externalName = "EDTSCOL.PERIODICITE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dateDeb, dateFin, hcomp, reservation); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Periodicite"; 
+    }; 
+    name = Periodicite; 
+    primaryKeyAttributes = (perKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

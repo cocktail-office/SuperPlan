@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "KEY_NEW"; 
+            externalType = NUMBER; 
+            name = keyNew; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "KEY_OLD"; 
+            externalType = NUMBER; 
+            name = keyOld; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (keyNew, keyOld); 
+    className = "org.cocktail.superplan.server.metier.ScolTransfertGrp"; 
+    classProperties = (newGrp, oldGrp); 
+    externalName = "SCOLARITE.SCOL_TRANSFERT_GRP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolTransfertGrp"; 
+    }; 
+    name = ScolTransfertGrp; 
+    primaryKeyAttributes = (keyNew, keyOld); 
+    relationships = (
+        {
+            destination = ScolGroupeGrp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = keyNew; }); 
+            name = newGrp; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = keyOld; }); 
+            name = oldGrp; 
+        }
+    ); 
+}

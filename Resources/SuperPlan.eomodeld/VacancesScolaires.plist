@@ -1,0 +1,70 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VS_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = vsCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "VS_DATE_DEBUT"; 
+            externalType = DATE; 
+            name = vsDateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "VS_DATE_FIN"; 
+            externalType = DATE; 
+            name = vsDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "VS_KEY"; 
+            externalType = NUMBER; 
+            name = vsKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fhabKey, vsCommentaire, vsDateDebut, vsDateFin, vsKey); 
+    className = "org.cocktail.superplan.server.metier.VacancesScolaires"; 
+    classProperties = (fannKey, formationHabilitation, vsCommentaire, vsDateDebut, vsDateFin); 
+    externalName = "EDTSCOL.VACANCES_SCOLAIRES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, formationHabilitation, vsCommentaire, vsDateDebut, vsDateFin); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VacancesScolaires"; 
+    }; 
+    name = VacancesScolaires; 
+    primaryKeyAttributes = (vsKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = FormationHabilitation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = formationHabilitation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

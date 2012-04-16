@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            columnName = "TLOC_APPLI"; 
+            externalType = VARCHAR2; 
+            name = tlocAppli; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "TLOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = tlocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "TLOC_ECRASABLE"; 
+            externalType = VARCHAR2; 
+            name = tlocEcrasable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TLOC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tlocLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (tlocAppli, tlocCode, tlocEcrasable, tlocLibelle); 
+    className = "org.cocktail.superplan.server.metier.TypeLocation"; 
+    classProperties = (tlocAppli, tlocCode, tlocEcrasable, tlocLibelle); 
+    externalName = "EDTSCOL.TYPE_LOCATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (tlocAppli, tlocCode, tlocEcrasable, tlocLibelle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.TypeLocation"; 
+    }; 
+    name = TypeLocation; 
+    primaryKeyAttributes = (tlocCode); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

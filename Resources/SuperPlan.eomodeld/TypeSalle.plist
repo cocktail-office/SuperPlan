@@ -1,0 +1,32 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "TSAL_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tsalLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "TSAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = tsalNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (tsalLibelle, tsalNumero); 
+    className = "org.cocktail.superplan.server.metier.TypeSalle"; 
+    classProperties = (tsalLibelle); 
+    externalName = "GRHUM.TYPE_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (tsalLibelle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.TypeSalle"; 
+    }; 
+    name = TypeSalle; 
+    primaryKeyAttributes = (tsalNumero); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

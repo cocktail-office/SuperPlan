@@ -1,0 +1,35 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {afficherDescription = id; fermer = id; rechercherSalle = id; valider = id; }; 
+            CLASS = "edtscol.client.recherche.SalleLibreController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bRecherche = id; 
+                bValider = id; 
+                cEcran = id; 
+                cInfo = id; 
+                cInsonorise = id; 
+                cObscure = id; 
+                cRetro = id; 
+                cTel = id; 
+                cTv = id; 
+                cVideo = id; 
+                cbFiltreCapacite = id; 
+                comboBatiments = id; 
+                comboImplantationGeo = id; 
+                comboTypeSalle = id; 
+                eodSalle = id; 
+                matDeposToutes = id; 
+                matLibre = id; 
+                tCapacite = id; 
+                tEtage = id; 
+                tPorte = id; 
+                tableSalle = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_DATE_DEB"; 
+            externalType = DATE; 
+            name = logOldDateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "LOG_OLD_DATE_FIN"; 
+            externalType = DATE; 
+            name = logOldDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "LOG_OLD_HCOMP"; 
+            externalType = NUMBER; 
+            name = logOldHcomp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_PERIODICITE_KEY"; 
+            externalType = NUMBER; 
+            name = logPeriodiciteKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        logKey, 
+        logOldDateDeb, 
+        logOldDateFin, 
+        logOldHcomp, 
+        logOldResaKey, 
+        logPeriodiciteKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.LogReservationPeriod"; 
+    classProperties = (logOldDateDeb, logOldDateFin, logOldHcomp, logOldResaKey); 
+    externalName = "EDTSCOL.LOG_RESERVATION_PERIOD"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (logOldDateDeb, logOldDateFin, logOldHcomp, logOldResaKey); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationPeriod"; 
+    }; 
+    name = LogReservationPeriod; 
+    primaryKeyAttributes = (logPeriodiciteKey); 
+}

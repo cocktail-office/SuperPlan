@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDIP_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdipCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fdipCode, fspnKey, mecKey, mparKey, msemKey); 
+    className = "org.cocktail.superplan.server.metier.VParcoursEc"; 
+    classProperties = (examenEntetes, fannKey, formationDiplome, maquetteEc, parcours, semestre); 
+    externalName = "EDTSCOL.V_PARCOURS_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (examenEntetes, fannKey, formationDiplome, maquetteEc, parcours, semestre); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VParcoursEc"; 
+    }; 
+    name = VParcoursEc; 
+    primaryKeyAttributes = (mecKey); 
+    relationships = (
+        {
+            destination = ExamenEntete; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = examenEntetes; 
+        }, 
+        {
+            destination = FormationDiplome; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdipCode; sourceAttribute = fdipCode; }); 
+            name = formationDiplome; 
+        }, 
+        {
+            destination = MaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteEc; 
+        }, 
+        {
+            destination = MaquetteParcours; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mparKey; sourceAttribute = mparKey; }); 
+            name = parcours; 
+        }, 
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

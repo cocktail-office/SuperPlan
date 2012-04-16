@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = "edtscol.client.MailPersSalObj"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                cO = id; 
+                cP = id; 
+                cS = id; 
+                ccO = id; 
+                ccP = id; 
+                ccS = id; 
+                dO = id; 
+                dP = id; 
+                dS = id; 
+                mO = id; 
+                mP = id; 
+                mS = id; 
+                sO = id; 
+                sP = id; 
+                sS = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

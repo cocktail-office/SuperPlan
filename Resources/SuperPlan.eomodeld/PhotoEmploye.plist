@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DATAS_PHOTO"; 
+            externalType = BLOB; 
+            name = image; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (image, noIndividu); 
+    className = "org.cocktail.superplan.server.metier.PhotosEmployesGrhum"; 
+    classProperties = (image, individuUlr); 
+    externalName = "GRHUM.PHOTOS_EMPLOYES_GRHUM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (image, individuUlr); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.PhotosEmployesGrhum"; 
+    }; 
+    name = PhotoEmploye; 
+    primaryKeyAttributes = (noIndividu); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

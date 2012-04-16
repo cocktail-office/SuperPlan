@@ -1,0 +1,182 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU_CLIENT"; 
+            externalType = NUMBER; 
+            name = noIndividuClient; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = resaCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TLOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = tlocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }
+    ); 
+    attributesUsedForLocking = (resaKey, tlocCode); 
+    className = "org.cocktail.superplan.server.metier.Reservation"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        occupants, 
+        periodicites, 
+        resaCommentaire, 
+        resaExamens, 
+        resaSalles, 
+        reservationAp, 
+        sallesSouhaitees, 
+        tlocCode, 
+        typeLocation, 
+        reservationObjets, 
+        individuAgent, 
+        reservationsSemestres, 
+        logReservations
+    ); 
+    externalName = "EDTSCOL.RESERVATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            dCreation, 
+            dModification, 
+            individuAgent, 
+            occupants, 
+            periodicites, 
+            resaCommentaire, 
+            resaExamens, 
+            resaSalles, 
+            reservationAp, 
+            sallesSouhaitees, 
+            tlocCode, 
+            typeLocation, 
+            reservationObjets, 
+            reservationsSemestres, 
+            logReservations
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Reservation"; 
+    }; 
+    name = Reservation; 
+    primaryKeyAttributes = (resaKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividuClient; }); 
+            name = individuAgent; 
+        }, 
+        {
+            destination = LogReservation; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = logResaKey; sourceAttribute = resaKey; }); 
+            name = logReservations; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Occupant; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = occupants; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Periodicite; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = periodicites; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ResaExamen; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = resaExamens; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ResaSalles; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = resaSalles; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ReservationAp; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservationAp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ReservationObjet; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservationObjets; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ReservationSemestre; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservationsSemestres; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SalleSouhaitee; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = sallesSouhaitees; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = TypeLocation; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = tlocCode; sourceAttribute = tlocCode; }); 
+            name = typeLocation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

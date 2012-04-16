@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, idiplNumero, mrsemKey); 
+    className = "org.cocktail.superplan.server.metier.ScolInscriptionSemestre"; 
+    classProperties = (fannKey, maquetteRepartitionSem); 
+    externalName = "SCOLARITE.SCOL_INSCRIPTION_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, maquetteRepartitionSem); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolInscriptionSemestre"; 
+    }; 
+    name = ScolInscriptionSemestre; 
+    primaryKeyAttributes = (idiplNumero, mrsemKey); 
+    relationships = (
+        {
+            destination = MaquetteRepartitionSem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrsemKey; sourceAttribute = mrsemKey; }); 
+            name = maquetteRepartitionSem; 
+        }
+    ); 
+}

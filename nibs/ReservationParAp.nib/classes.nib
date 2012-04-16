@@ -1,0 +1,41 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                fermer = id; 
+                inspecter = id; 
+                rechercherAp = id; 
+                rechercherCreneau = id; 
+                sortieXls = id; 
+            }; 
+            CLASS = "edtscol.client.recherchereservation.ReservationParAp"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bFermer = id; 
+                bInspecter = id; 
+                bRechCreneau = id; 
+                comboAnnees = id; 
+                comboAp = id; 
+                comboHoraireCode = id; 
+                comboParcours = id; 
+                comboSemestre = id; 
+                eodHabilitation = id; 
+                eodOccupants = id; 
+                eodPeriodes = id; 
+                labelMapGroupePrevu = id; 
+                labelMapValeur = id; 
+                matPrefDip = id; 
+                tDiplome = id; 
+                tGrade = id; 
+                tReserve = id; 
+                tSeuil = id; 
+                tableHabilitation = id; 
+                tableOccupants = id; 
+                tablePeriodes = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

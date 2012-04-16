@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = EFFECTIF; 
+            externalType = NUMBER; 
+            name = effectif; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (effectif, fannKey, mapKey); 
+    className = "org.cocktail.superplan.server.metier.VScolInscritsAp"; 
+    classProperties = (effectif, fannKey, mapKey, maquetteAp, scolFormationAnnee); 
+    externalName = "SCOLARITE.V_SCOL_INSCRITS_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (effectif, maquetteAp, scolFormationAnnee); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VScolInscritsAp"; 
+    }; 
+    name = VScolInscritsAp; 
+    primaryKeyAttributes = (mapKey); 
+    relationships = (
+        {
+            destination = MaquetteAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = FormationAnnee; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }
+    ); 
+}

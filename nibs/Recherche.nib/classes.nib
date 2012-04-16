@@ -1,0 +1,36 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; valider = id; }; 
+            CLASS = "edtscol.client.recherche.Recherche"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bValide = id; 
+                eodIndividu = id; 
+                eodObjet = id; 
+                eodSalle = id; 
+                popTypeRessource = id; 
+                swapRecherche = id; 
+                tabRes = id; 
+                tableIndividu = id; 
+                tableObjet = id; 
+                tableSalle = id; 
+                treeChoixView = id; 
+                typeChoix = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.EOComboBox"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.SwapView"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

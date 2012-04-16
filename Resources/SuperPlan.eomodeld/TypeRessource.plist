@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {
+            columnName = "TYPE_CODE"; 
+            externalType = VARCHAR2; 
+            name = typeCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "TYPE_ORDRE"; 
+            externalType = NUMBER; 
+            name = typeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (typeCode, typeOrdre); 
+    className = "org.cocktail.superplan.server.metier.TypeRessource"; 
+    classProperties = (typeCode, typeOrdre); 
+    externalName = "EDTSCOL.TYPE_RESSOURCE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (typeCode, typeOrdre); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.TypeRessource"; 
+    }; 
+    name = TypeRessource; 
+    primaryKeyAttributes = (typeOrdre); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

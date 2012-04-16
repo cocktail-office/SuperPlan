@@ -1,0 +1,33 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                devaliderHComp = id; 
+                imprimerHeuresNonValides = id; 
+                imprimerHeuresValides = id; 
+                validerHComp = id; 
+            }; 
+            CLASS = "edtscol.client.DetailHCompHandler"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bImprimerNonValide = id; 
+                bImprimerValide = id; 
+                eodHcompRecup = id; 
+                eodPeriodicite = id; 
+                tableHcompRecup = id; 
+                tablePeriodicite = id; 
+                viewHComp = id; 
+                viewNonValide = id; 
+                viewValide = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.SwapView"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

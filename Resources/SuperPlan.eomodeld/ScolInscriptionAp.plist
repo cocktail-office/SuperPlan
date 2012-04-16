@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRAP_DISPENSE"; 
+            externalType = NUMBER; 
+            name = imrapDispense; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IMRAP_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = imrapSemestre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRAP_KEY"; 
+            externalType = NUMBER; 
+            name = mrapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, idiplNumero, imrapDispense, imrapSemestre, mrapKey); 
+    className = "org.cocktail.superplan.server.metier.ScolInscriptionAp"; 
+    classProperties = (imrapDispense, maquetteRepartitionAp, mrapKey); 
+    externalName = "SCOLARITE.SCOL_INSCRIPTION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (imrapDispense, mrapKey); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolInscriptionAp"; 
+    }; 
+    name = ScolInscriptionAp; 
+    primaryKeyAttributes = (idiplNumero, imrapSemestre, mrapKey); 
+    relationships = (
+        {
+            destination = MaquetteRepartitionAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrapKey; sourceAttribute = mrapKey; }); 
+            name = maquetteRepartitionAp; 
+        }
+    ); 
+}

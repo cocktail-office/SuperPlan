@@ -1,0 +1,74 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "HCOMP_REC"; 
+            externalType = NUMBER; 
+            name = hcompRec; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_SEM_KEY"; 
+            externalType = NUMBER; 
+            name = resaSemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (resaSemKey, resaKey, msemKey, ggrpKey, hcompRec); 
+    className = "org.cocktail.superplan.server.metier.ReservationSemestre"; 
+    classProperties = (scolGroupeGrp, semestre, reservation, hcompRec); 
+    externalName = "EDTSCOL.RESERVATION_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (scolGroupeGrp, semestre, reservation, hcompRec); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ReservationSemestre"; 
+    }; 
+    name = ReservationSemestre; 
+    primaryKeyAttributes = (resaSemKey); 
+    relationships = (
+        {
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }, 
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }
+    ); 
+}

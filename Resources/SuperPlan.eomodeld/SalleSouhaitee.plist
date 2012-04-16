@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_SOU_KEY"; 
+            externalType = NUMBER; 
+            name = salSouKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SOU_POSITION"; 
+            externalType = NUMBER; 
+            name = souPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (resaKey, salNumero, salSouKey, souPosition); 
+    className = "org.cocktail.superplan.server.metier.SalleSouhaitee"; 
+    classProperties = (reservation, salle, souPosition); 
+    externalName = "EDTSCOL.SALLE_SOUHAITEE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (reservation, salle, souPosition); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.SalleSouhaitee"; 
+    }; 
+    name = SalleSouhaitee; 
+    primaryKeyAttributes = (salSouKey); 
+    relationships = (
+        {
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }, 
+        {
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

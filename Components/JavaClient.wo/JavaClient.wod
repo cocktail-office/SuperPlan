@@ -1,0 +1,8 @@
+JavaClientComponent: WOJavaClientComponent {
+    applicationClassName = "edtscol.client.MainClient";
+    applicationName = "SuperPlan";
+    applicationDescription = "Plannings et emplois du temps";
+    downloadClientClasses = "customBundlesClientClasses";
+    needsAllPermissions = true;
+    vendor = "Association Cocktail";
+}

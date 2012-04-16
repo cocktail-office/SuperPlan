@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GOBJ_KEY"; 
+            externalType = NUMBER; 
+            name = gobjKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GOBJ_TYPE"; 
+            externalType = VARCHAR2; 
+            name = gobjType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, ggrpKey, gobjKey, gobjType, mapKey, msemKey); 
+    className = "org.cocktail.superplan.server.metier.ScolGroupeObjetVdi"; 
+    classProperties = (fannKey, ggrpKey, gobjKey, gobjType, mapKey, msemKey, semestre); 
+    externalName = "SCOLARITE.SCOL_GROUPE_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, gobjKey, gobjType, mapKey, msemKey, semestre); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolGroupeObjetVdi"; 
+    }; 
+    name = ScolGroupeObjetVdi; 
+    primaryKeyAttributes = (gobjKey); 
+    relationships = (
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }
+    ); 
+    restrictingQualifier = "gobjType='VDI'"; 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

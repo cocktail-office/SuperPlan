@@ -1,0 +1,37 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {rechercherIndividu = id; }; 
+            CLASS = "edtscol.client.recherche.IndividuController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bRecherche = id; 
+                boxIndividu = id; 
+                boxRechercheIndGrp = id; 
+                eodIndividuUlr = id; 
+                matEnsEtud = id; 
+                matIndividuGrp = id; 
+                swapRecherche = id; 
+                tableIndividuUlr = id; 
+                tfNom = id; 
+                tfPrenom = id; 
+                treeGroupes = id; 
+                viewGroupes = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {
+            CLASS = "fr.univlr.cri.javaclient.CRITree"; 
+            LANGUAGE = Java; 
+            OUTLETS = {treeTable = id; treeView = id; }; 
+            SUPERCLASS = "java.lang.Object"; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.SwapView"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

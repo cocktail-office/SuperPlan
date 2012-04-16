@@ -1,0 +1,127 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GOBJ_KEY"; 
+            externalType = NUMBER; 
+            name = gobjKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GOBJ_TYPE"; 
+            externalType = VARCHAR2; 
+            name = gobjType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, ggrpKey, gobjKey, gobjType, mapKey, msemKey); 
+    className = "org.cocktail.superplan.server.metier.ScolGroupeObjet"; 
+    classProperties = (
+        fannKey, 
+        ggrpKey, 
+        gobjKey, 
+        gobjType, 
+        inclusFils, 
+        inclusPere, 
+        mapKey, 
+        maquetteAp, 
+        msemKey, 
+        scolGroupeGrp, 
+        semestre
+    ); 
+    externalName = "SCOLARITE.SCOL_GROUPE_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            gobjKey, 
+            gobjType, 
+            inclusFils, 
+            inclusPere, 
+            mapKey, 
+            maquetteAp, 
+            msemKey, 
+            scolGroupeGrp, 
+            semestre
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolGroupeObjet"; 
+    }; 
+    name = ScolGroupeObjet; 
+    primaryKeyAttributes = (gobjKey); 
+    relationships = (
+        {
+            destination = ScolGroupeInclusion; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey1; sourceAttribute = ggrpKey; }); 
+            name = inclusFils; 
+        }, 
+        {
+            destination = ScolGroupeInclusion; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey2; sourceAttribute = ggrpKey; }); 
+            name = inclusPere; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }, 
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

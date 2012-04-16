@@ -1,0 +1,79 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "DATE_DEB"; 
+            externalType = DATE; 
+            name = dateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "RO_KEY"; 
+            externalType = NUMBER; 
+            name = roKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ROR_KEY"; 
+            externalType = NUMBER; 
+            name = rorKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (roKey, cStructure, rorKey); 
+    className = "org.cocktail.superplan.server.metier.ResaObjetReserve"; 
+    classProperties = (structureUlr, resaObjet, dateDeb, dateFin, repartStructures); 
+    externalName = "EDTSCOL.RESA_OBJET_RESERVE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (resaObjet, structureUlr, dateDeb, dateFin, repartStructures); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaObjetReserve"; 
+    }; 
+    name = ResaObjetReserve; 
+    primaryKeyAttributes = (rorKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = RepartStructure; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = repartStructures; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ResaObjet; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = roKey; }); 
+            name = resaObjet; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = StructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = structureUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

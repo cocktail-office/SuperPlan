@@ -1,0 +1,200 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CPH_DIM_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphDimHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_DIM_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphDimHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_JEU_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphJeuHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_JEU_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphJeuHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CPH_KEY"; 
+            externalType = NUMBER; 
+            name = cphKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_LUN_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphLunHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_LUN_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphLunHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_MAR_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphMarHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_MAR_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphMarHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_MER_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphMerHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_MER_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphMerHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_SAM_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphSamHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_SAM_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphSamHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_VEN_HEURE_DEB"; 
+            externalType = NUMBER; 
+            name = cphVenHeureDeb; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPH_VEN_HEURE_FIN"; 
+            externalType = NUMBER; 
+            name = cphVenHeureFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cphDimHeureDeb, 
+        cphDimHeureFin, 
+        cphJeuHeureDeb, 
+        cphJeuHeureFin, 
+        cphKey, 
+        cphLunHeureDeb, 
+        cphLunHeureFin, 
+        cphMarHeureDeb, 
+        cphMarHeureFin, 
+        cphMerHeureDeb, 
+        cphMerHeureFin, 
+        cphSamHeureDeb, 
+        cphSamHeureFin, 
+        cphVenHeureDeb, 
+        cphVenHeureFin, 
+        fhabKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.CtrlParamHabilitation"; 
+    classProperties = (
+        cphDimHeureDeb, 
+        cphDimHeureFin, 
+        cphJeuHeureDeb, 
+        cphJeuHeureFin, 
+        cphLunHeureDeb, 
+        cphLunHeureFin, 
+        cphMarHeureDeb, 
+        cphMarHeureFin, 
+        cphMerHeureDeb, 
+        cphMerHeureFin, 
+        cphSamHeureDeb, 
+        cphSamHeureFin, 
+        cphVenHeureDeb, 
+        cphVenHeureFin, 
+        formationHabilitation
+    ); 
+    externalName = "EDTSCOL.CTRL_PARAM_HABILITATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cphDimHeureDeb, 
+            cphDimHeureFin, 
+            cphJeuHeureDeb, 
+            cphJeuHeureFin, 
+            cphLunHeureDeb, 
+            cphLunHeureFin, 
+            cphMarHeureDeb, 
+            cphMarHeureFin, 
+            cphMerHeureDeb, 
+            cphMerHeureFin, 
+            cphSamHeureDeb, 
+            cphSamHeureFin, 
+            cphVenHeureDeb, 
+            cphVenHeureFin, 
+            formationHabilitation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlParamHabilitation"; 
+    }; 
+    name = CtrlParamHabilitation; 
+    primaryKeyAttributes = (cphKey); 
+    relationships = (
+        {
+            destination = FormationHabilitation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = formationHabilitation; 
+        }
+    ); 
+}

@@ -1,0 +1,45 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                alerte = id; 
+                bloquerDebloquerEdt = id; 
+                chooseTypePlanning = id; 
+                imprimer = id; 
+                inspecteur = id; 
+                nextWeek = id; 
+                previousWeek = id; 
+                rechercherRessource = id; 
+                refreshPlanning = id; 
+                selectDate = id; 
+            }; 
+            CLASS = "edtscol.client.MainInterface"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bCalendar = id; 
+                bImprime = id; 
+                bLock = id; 
+                bRefresh = id; 
+                bRessource = id; 
+                btAlerte = id; 
+                btInspecteur = id; 
+                calDown = id; 
+                calUp = id; 
+                eodPhotoEmploye = id; 
+                panelRessources = id; 
+                panelWeekButtons = id; 
+                planningView = id; 
+                ppAgent = id; 
+                tCalendrier = id; 
+                tRessource = id; 
+                typePlanning = id; 
+                vPhoto = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {CLASS = "edtscol.client.PlanningView"; LANGUAGE = Java; SUPERCLASS = NSView; }, 
+        {CLASS = "javax.swing.JPanel"; LANGUAGE = Java; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,98 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DET_POURCENTAGE"; 
+            externalType = NUMBER; 
+            name = detPourcentage; 
+            precision = 12; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TOC_ORDRE"; 
+            externalType = NUMBER; 
+            name = tocOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, detPourcentage, salNumero, tocOrdre); 
+    className = "org.cocktail.superplan.server.metier.DetailPourcentage"; 
+    classProperties = (
+        cStructure, 
+        detPourcentage, 
+        repartStructures, 
+        salles, 
+        salNumero, 
+        structureUlr, 
+        tocOrdre, 
+        typeOccupation
+    ); 
+    externalName = "GRHUM.DETAIL_POURCENTAGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            detPourcentage, 
+            repartStructures, 
+            salles, 
+            salNumero, 
+            structureUlr, 
+            tocOrdre, 
+            typeOccupation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.DetailPourcentage"; 
+    }; 
+    name = DetailPourcentage; 
+    primaryKeyAttributes = (cStructure, salNumero, tocOrdre); 
+    relationships = (
+        {
+            destination = RepartStructure; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = repartStructures; 
+        }, 
+        {
+            destination = Salles; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salles; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = structureUlr; 
+        }, 
+        {
+            destination = TypeOccupation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tocOrdre; sourceAttribute = tocOrdre; }); 
+            name = typeOccupation; 
+        }
+    ); 
+}

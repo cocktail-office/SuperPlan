@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRAP_KEY"; 
+            externalType = NUMBER; 
+            name = mrapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, mapKey, mecKey, mrapKey); 
+    className = "org.cocktail.superplan.server.metier.MaquetteRepartitionAp"; 
+    classProperties = (formationAnnee, maquetteAp, maquetteEc); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_REPARTITION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (formationAnnee, maquetteAp, maquetteEc); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteRepartitionAp"; 
+    }; 
+    name = MaquetteRepartitionAp; 
+    primaryKeyAttributes = (mrapKey); 
+    relationships = (
+        {
+            destination = FormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = formationAnnee; 
+        }, 
+        {
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = MaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteEc; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

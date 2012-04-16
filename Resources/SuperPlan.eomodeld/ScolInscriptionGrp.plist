@@ -1,0 +1,56 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "IGGRP_TEMOIN_SELECTION"; 
+            externalType = VARCHAR2; 
+            name = iggrpTemoinSelection; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, ggrpKey, idiplNumero, iggrpTemoinSelection); 
+    className = "org.cocktail.superplan.server.metier.ScolInscriptionGrp"; 
+    classProperties = (fannKey, ggrpKey, iggrpTemoinSelection, scolInscriptionEtudiant); 
+    externalName = "SCOLARITE.SCOL_INSCRIPTION_GRP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolInscriptionGrp"; 
+    }; 
+    name = ScolInscriptionGrp; 
+    primaryKeyAttributes = (ggrpKey, idiplNumero); 
+    relationships = (
+        {
+            destination = ScolInscriptionEtudiant; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = idiplNumero; sourceAttribute = idiplNumero; }
+            ); 
+            name = scolInscriptionEtudiant; 
+        }
+    ); 
+}

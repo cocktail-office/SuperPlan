@@ -1,0 +1,31 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {chercherDiplome = id; selectionnerGroupes = id; }; 
+            CLASS = "edtscol.client.recherche.MatiereExtController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bChoixGroupesAp = id; 
+                checkSemPrec = id; 
+                comboAnnees = id; 
+                comboAps = id; 
+                comboGroupes = id; 
+                comboGroupesSem = id; 
+                comboParcours = id; 
+                comboSemestres = id; 
+                eodHabilitation = id; 
+                lblGrpAp = id; 
+                lblGrpSem = id; 
+                matPrefDip = id; 
+                matTypeAp = id; 
+                tDiplome = id; 
+                tGrade = id; 
+                tableHabilitation = id; 
+                viewMatiereExt = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

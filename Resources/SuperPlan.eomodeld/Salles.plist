@@ -1,0 +1,367 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_ANNULATION"; 
+            externalType = DATE; 
+            name = dAnnulation; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_CAPACITE"; 
+            externalType = NUMBER; 
+            name = salCapacite; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_DESCRIPTIF"; 
+            externalType = VARCHAR2; 
+            name = salDescriptif; 
+            valueClassName = NSString; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_ECRAN"; 
+            externalType = VARCHAR2; 
+            name = salEcran; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "SAL_ETAGE"; 
+            externalType = VARCHAR2; 
+            name = salEtage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_INSONORISEE"; 
+            externalType = VARCHAR2; 
+            name = salInsonorisee; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NB_ARMOIRES"; 
+            externalType = NUMBER; 
+            name = salNbArmoires; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NB_BUREAUX"; 
+            externalType = NUMBER; 
+            name = salNbBureaux; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NB_CHAISES"; 
+            externalType = NUMBER; 
+            name = salNbChaises; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NB_FENETRES"; 
+            externalType = NUMBER; 
+            name = salNbFenetres; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NB_PLACES_EXAM_LIB"; 
+            externalType = NUMBER; 
+            name = salNbPlacesExamLib; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NB_TABLES"; 
+            externalType = NUMBER; 
+            name = salNbTables; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NO_POSTE"; 
+            externalType = VARCHAR2; 
+            name = salNoPoste; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_OBSCUR"; 
+            externalType = VARCHAR2; 
+            name = salObscur; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "SAL_PORTE"; 
+            externalType = VARCHAR2; 
+            name = salPorte; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 150; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_RESERVABLE"; 
+            externalType = VARCHAR2; 
+            name = salReservable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_RETRO"; 
+            externalType = VARCHAR2; 
+            name = salRetro; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_SUPERFICIE"; 
+            externalType = NUMBER; 
+            name = salSuperficie; 
+            precision = 12; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_TABLEAU"; 
+            externalType = VARCHAR2; 
+            name = salTableau; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_TABLEAU_BLANC"; 
+            externalType = VARCHAR2; 
+            name = salTableauBlanc; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_TABLEAU_PAPIER"; 
+            externalType = VARCHAR2; 
+            name = salTableauPapier; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_TELEVISION"; 
+            externalType = VARCHAR2; 
+            name = salTelevision; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TSAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = tsalNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cLocal, 
+        salCapacite, 
+        salDescriptif, 
+        salEcran, 
+        salEtage, 
+        salInsonorisee, 
+        salNbArmoires, 
+        salNbBureaux, 
+        salNbChaises, 
+        salNbFenetres, 
+        salNbPlacesExamLib, 
+        salNbTables, 
+        salNoPoste, 
+        salNumero, 
+        salObscur, 
+        salPorte, 
+        salReservable, 
+        salRetro, 
+        salSuperficie, 
+        salTableau, 
+        salTableauBlanc, 
+        salTableauPapier, 
+        salTelevision, 
+        tsalNumero
+    ); 
+    className = "org.cocktail.superplan.server.metier.Salles"; 
+    classProperties = (
+        cLocal, 
+        depositaires, 
+        local, 
+        prisess, 
+        salCapacite, 
+        salEcran, 
+        salEtage, 
+        salInsonorisee, 
+        salNbBureaux, 
+        salNbChaises, 
+        salNbFenetres, 
+        salNbPlacesExamLib, 
+        salNbTables, 
+        salNoPoste, 
+        salObscur, 
+        salPorte, 
+        salReservable, 
+        salRetro, 
+        salTableau, 
+        salTableauBlanc, 
+        salTableauPapier, 
+        salTelevision, 
+        typeSalle, 
+        repartLotSalles, 
+        repartsBatImpGeo, 
+        salSuperficie, 
+        salDescriptif, 
+        salNbArmoires, 
+        detailPourcentages, 
+        dAnnulation
+    ); 
+    externalName = "GRHUM.SALLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cLocal, 
+            depositaires, 
+            local, 
+            prisess, 
+            salCapacite, 
+            salEcran, 
+            salEtage, 
+            salInsonorisee, 
+            salNbBureaux, 
+            salNbChaises, 
+            salNbFenetres, 
+            salNbPlacesExamLib, 
+            salNbTables, 
+            salNoPoste, 
+            salObscur, 
+            salPorte, 
+            salReservable, 
+            salRetro, 
+            salTableau, 
+            salTableauBlanc, 
+            salTableauPapier, 
+            salTelevision, 
+            typeSalle, 
+            repartLotSalles, 
+            repartsBatImpGeo, 
+            salSuperficie, 
+            salDescriptif, 
+            salNbArmoires, 
+            detailPourcentages, 
+            dAnnulation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Salles"; 
+    }; 
+    name = Salles; 
+    primaryKeyAttributes = (salNumero); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DepositaireSalles; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = depositaires; 
+        }, 
+        {
+            destination = DetailPourcentage; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = detailPourcentages; 
+        }, 
+        {
+            destination = Local; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = local; 
+        }, 
+        {
+            destination = Prises; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = prisess; 
+        }, 
+        {
+            destination = RepartLotSalle; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = repartLotSalles; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = RepartBatImpGeo; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = repartsBatImpGeo; 
+        }, 
+        {
+            destination = TypeSalle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tsalNumero; sourceAttribute = tsalNumero; }); 
+            name = typeSalle; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

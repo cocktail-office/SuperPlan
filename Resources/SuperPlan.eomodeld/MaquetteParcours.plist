@@ -1,0 +1,86 @@
+{
+    attributes = (
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MPAR_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mparAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MPAR_CODE"; 
+            externalType = VARCHAR2; 
+            name = mparCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MPAR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mparLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MPAR_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mparValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (fspnKey, mparAbreviation, mparCode, mparKey, mparLibelle, mparValidite); 
+    className = "org.cocktail.superplan.server.metier.MaquetteParcours"; 
+    classProperties = (
+        formationSpecialisation, 
+        mparAbreviation, 
+        mparCode, 
+        mparKey, 
+        mparLibelle, 
+        mparValidite
+    ); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_PARCOURS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            formationSpecialisation, 
+            mparAbreviation, 
+            mparCode, 
+            mparKey, 
+            mparLibelle, 
+            mparValidite
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteParcours"; 
+    }; 
+    name = MaquetteParcours; 
+    primaryKeyAttributes = (mparKey); 
+    relationships = (
+        {
+            destination = FormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = formationSpecialisation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

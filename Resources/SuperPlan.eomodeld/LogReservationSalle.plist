@@ -1,0 +1,77 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_RESA_SAL_DATE"; 
+            externalType = DATE; 
+            name = logOldResaSalDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_RESA_SAL_ETAT"; 
+            externalType = VARCHAR2; 
+            name = logOldResaSalEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "LOG_OLD_SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = logOldSalNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_SALLE_KEY"; 
+            externalType = NUMBER; 
+            name = logSalleKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        logKey, 
+        logOldResaKey, 
+        logOldResaSalDate, 
+        logOldResaSalEtat, 
+        logOldSalNumero, 
+        logSalleKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.LogReservationSalle"; 
+    classProperties = (logOldResaKey, logOldResaSalDate, logOldResaSalEtat, salles); 
+    externalName = "EDTSCOL.LOG_RESERVATION_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (logOldResaKey, logOldResaSalDate, logOldResaSalEtat, salles); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationSalle"; 
+    }; 
+    name = LogReservationSalle; 
+    primaryKeyAttributes = (logSalleKey); 
+    relationships = (
+        {
+            destination = Salles; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = logOldSalNumero; }); 
+            name = salles; 
+        }
+    ); 
+}

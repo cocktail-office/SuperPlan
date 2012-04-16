@@ -1,0 +1,70 @@
+{
+    attributes = (
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_LC"; 
+            externalType = VARCHAR2; 
+            name = persLc; 
+            valueClassName = NSString; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = persLibelle; 
+            valueClassName = NSString; 
+            width = 120; 
+        }, 
+        {
+            columnName = "PERS_NOMPTR"; 
+            externalType = VARCHAR2; 
+            name = persNomptr; 
+            valueClassName = NSString; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_ORDRE"; 
+            externalType = NUMBER; 
+            name = persOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_TYPE"; 
+            externalType = VARCHAR2; 
+            name = persType; 
+            valueClassName = NSString; 
+            width = 5; 
+        }
+    ); 
+    attributesUsedForLocking = (persId, persLc, persLibelle, persNomptr, persOrdre, persType); 
+    className = "org.cocktail.superplan.server.metier.Personne"; 
+    classProperties = (persId, persLc, persLibelle, persNomptr, persOrdre, persType, toIndividu); 
+    externalName = "GRHUM.PERSONNE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (persId, persLc, persLibelle, persNomptr, persOrdre, persType, toIndividu); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Personne"; 
+    }; 
+    name = Personne; 
+    primaryKeyAttributes = (persId); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = persOrdre; }); 
+            name = toIndividu; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

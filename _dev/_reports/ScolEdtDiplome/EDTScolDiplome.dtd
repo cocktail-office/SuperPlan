@@ -1,0 +1,47 @@
+<!ELEMENT affichageHeure ( heureDepart, nbsHeuresAffichees ) >
+
+<!ELEMENT color ( #PCDATA ) >
+
+<!ELEMENT contenu ( #PCDATA ) >
+
+<!ELEMENT cours ( width, height, color?, texte? ) >
+
+<!ELEMENT creneau ( cours* ) >
+
+<!ELEMENT dateDuJour ( #PCDATA ) >
+
+<!ELEMENT diplome ( #PCDATA ) >
+
+<!ELEMENT entete ( diplome, semaine, affichageHeure, jour+ ) >
+
+<!ELEMENT groupes ( nomDuJour, dateDuJour, nbGroupe, nomGroupe+ ) >
+
+<!ELEMENT height ( #PCDATA ) >
+
+<!ELEMENT heureDepart ( #PCDATA ) >
+
+<!ELEMENT jour ( groupes, listCoursJournee ) >
+
+<!ELEMENT listCoursJournee ( nbCreneau, creneau+ ) >
+
+<!ELEMENT name ( #PCDATA ) >
+
+<!ELEMENT nbCreneau ( #PCDATA ) >
+
+<!ELEMENT nbGroupe ( #PCDATA ) >
+
+<!ELEMENT nbsHeuresAffichees ( #PCDATA ) >
+
+<!ELEMENT nomDuJour ( #PCDATA ) >
+
+<!ELEMENT nomGroupe ( name ) >
+
+<!ELEMENT occupants ( #PCDATA ) >
+
+<!ELEMENT salles ( #PCDATA ) >
+
+<!ELEMENT semaine ( #PCDATA ) >
+
+<!ELEMENT texte ( heuredeb, heurefin, contenu, occupants, salles ) >
+
+<!ELEMENT width ( #PCDATA ) >

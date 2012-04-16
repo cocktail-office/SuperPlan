@@ -1,0 +1,149 @@
+{
+    attributes = (
+        {
+            columnName = "DDIP_BILAN"; 
+            externalType = VARCHAR2; 
+            name = ddipBilan; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_EDT"; 
+            externalType = VARCHAR2; 
+            name = ddipEdt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_EXAMENS"; 
+            externalType = VARCHAR2; 
+            name = ddipExamens; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_GROUPES"; 
+            externalType = VARCHAR2; 
+            name = ddipGroupes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_IPEDAGOGIQUES"; 
+            externalType = VARCHAR2; 
+            name = ddipIpedagogiques; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_KEY"; 
+            externalType = NUMBER; 
+            name = ddipKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DDIP_MAQUETTES"; 
+            externalType = VARCHAR2; 
+            name = ddipMaquettes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DDIP_STATISTIQUES"; 
+            externalType = VARCHAR2; 
+            name = ddipStatistiques; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "DLOG_KEY"; 
+            externalType = NUMBER; 
+            name = dlogKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        ddipBilan, 
+        ddipEdt, 
+        ddipExamens, 
+        ddipGroupes, 
+        ddipIpedagogiques, 
+        ddipKey, 
+        ddipMaquettes, 
+        ddipStatistiques, 
+        dlogKey, 
+        fannKey, 
+        fhabKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.ScolDroitDiplome"; 
+    classProperties = (
+        ddipBilan, 
+        ddipEdt, 
+        ddipExamens, 
+        ddipGroupes, 
+        ddipIpedagogiques, 
+        ddipMaquettes, 
+        ddipStatistiques, 
+        dlogKey, 
+        fannKey, 
+        fhabKey, 
+        habilitation
+    ); 
+    externalName = "SCOLARITE.SCOL_DROIT_DIPLOME"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ddipBilan, 
+            ddipEdt, 
+            ddipExamens, 
+            ddipGroupes, 
+            ddipIpedagogiques, 
+            ddipMaquettes, 
+            ddipStatistiques, 
+            dlogKey, 
+            fannKey, 
+            fhabKey, 
+            habilitation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolDroitDiplome"; 
+    }; 
+    name = ScolDroitDiplome; 
+    primaryKeyAttributes = (ddipKey); 
+    relationships = (
+        {
+            destination = FormationHabilitation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = habilitation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

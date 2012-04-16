@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = EFFECTIF; 
+            externalType = NUMBER; 
+            name = effectif; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (effectif, fannKey, ggrpKey); 
+    className = "org.cocktail.superplan.server.metier.VScolInscritsGroupe"; 
+    classProperties = (effectif, fannKey, ggrpKey, scolFormationAnnee, scolGroupeGrp); 
+    externalName = "SCOLARITE.V_SCOL_INSCRITS_GROUPE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (effectif, scolFormationAnnee, scolGroupeGrp); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VScolInscritsGroupe"; 
+    }; 
+    name = VScolInscritsGroupe; 
+    primaryKeyAttributes = (ggrpKey); 
+    relationships = (
+        {
+            destination = FormationAnnee; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }
+    ); 
+}

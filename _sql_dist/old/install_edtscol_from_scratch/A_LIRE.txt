@@ -1,0 +1,33 @@
+Pour l'installation de SuperPlan FROM SCRATCH
+(pour ceux qui n'avaient pas l'application avant,
+donc aucune donnée, aucun historique).
+
+EDTSCOL DB v1.3.1 du 31/01/2008
+--------------------------------------------------------------
+
+
+Installation de la base EDTSCOL
+----------------------------------
+
+Suivre les étapes (fichiers 01_blabla à 04_blabla) dans l'ordre, TOUS LES SCRIPTS SQL S'EXECUTANT DEPUIS GRHUM:
+
+1. 01_drop_users.sql
+	Exécuter ce script depuis GRHUM pour supprimer les users EDTSCOL et RESERVATION.
+
+2. 02_create_users.sql
+	Exécuter ce script depuis GRHUM pour recréer ces users.
+
+3. 03_import_users.txt
+	Importation des 2 users à partir du fichier exports_edtscol_v1.3.1_reservation.dmp
+
+4. 04_init.sql
+	Exécuter ce script depuis GRHUM pour initialiser les tables de constantes.
+
+
+Installation de l'application
+--------------------------------
+
+1. Paramétrer le fichier de config SuperPlan.config dans le woa (Contents/Resources).
+2. Paramétrer l'accès à la base:
+	. si utilisation de SAUT, ajouter un id EDTSCOL dans SAUT, qui pointe sur le user EDTSCOL.
+	. Si pas de SAUT, paramétrer les informations de connexion dans le modèle.

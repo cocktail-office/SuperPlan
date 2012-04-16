@@ -1,0 +1,68 @@
+{
+    attributes = (
+        {
+            columnName = CLE; 
+            externalType = NUMBER; 
+            name = cle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CLE_PARENT"; 
+            externalType = NUMBER; 
+            name = cleParent; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = NIVEAU; 
+            externalType = NUMBER; 
+            name = niveau; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (niveau, cleParent, cle, libelle); 
+    className = "org.cocktail.superplan.server.metier.VTreeObjet"; 
+    classProperties = (niveau, cleParent, cle, libelle, resaTypeObjet, resaFamilleObjet, resaObjet); 
+    externalName = "EDTSCOL.V_TREE_OBJET"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (niveau, cleParent, cle, libelle, resaTypeObjet, resaFamilleObjet, resaObjet); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VTreeObjet"; 
+    }; 
+    name = VTreeObjet; 
+    primaryKeyAttributes = (cle); 
+    relationships = (
+        {
+            destination = ResaFamilleObjet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rfoKey; sourceAttribute = cle; }); 
+            name = resaFamilleObjet; 
+        }, 
+        {
+            destination = ResaObjet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = cle; }); 
+            name = resaObjet; 
+        }, 
+        {
+            destination = ResaTypeObjet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rtoKey; sourceAttribute = cle; }); 
+            name = resaTypeObjet; 
+        }
+    ); 
+}

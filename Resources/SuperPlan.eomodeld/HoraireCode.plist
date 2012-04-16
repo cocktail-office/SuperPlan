@@ -1,0 +1,79 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "MHCO_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = mhcoAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MHCO_CODE"; 
+            externalType = VARCHAR2; 
+            name = mhcoCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MHCO_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mhcoLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MHCO_PRIORITE"; 
+            externalType = NUMBER; 
+            name = mhcoPriorite; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MHCO_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = mhcoValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (mhcoAbreviation, mhcoCode, mhcoLibelle, mhcoPriorite, mhcoValidite); 
+    className = "org.cocktail.superplan.server.metier.HoraireCode"; 
+    classProperties = (
+        mhcoAbreviation, 
+        mhcoCode, 
+        mhcoLibelle, 
+        mhcoPriorite, 
+        mhcoValidite, 
+        scolMaquetteAps
+    ); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_HORAIRE_CODE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            mhcoAbreviation, 
+            mhcoCode, 
+            mhcoLibelle, 
+            mhcoPriorite, 
+            mhcoValidite, 
+            scolMaquetteAps
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.HoraireCode"; 
+    }; 
+    name = HoraireCode; 
+    primaryKeyAttributes = (mhcoCode); 
+    relationships = (
+        {
+            destination = MaquetteAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mhcoCode; sourceAttribute = mhcoCode; }); 
+            name = scolMaquetteAps; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

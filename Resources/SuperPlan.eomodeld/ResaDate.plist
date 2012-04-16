@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = "RESA_DEBUT"; 
+            externalType = DATE; 
+            name = resaDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "RESA_FIN"; 
+            externalType = DATE; 
+            name = resaFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "RESA_ORDRE"; 
+            externalType = NUMBER; 
+            name = resaOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_POS_DEBUT"; 
+            externalType = NUMBER; 
+            name = resaPosDebut; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_POS_FIN"; 
+            externalType = NUMBER; 
+            name = resaPosFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (resaDebut, resaFin, resaOrdre, resaPosDebut, resaPosFin); 
+    className = "org.cocktail.superplan.server.metier.ResaDate"; 
+    classProperties = (resaDebut, resaFin, resaPosDebut, resaPosFin); 
+    externalName = "RESERVATION.RESA_DATE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (resaDebut, resaFin, resaPlanning, resaPosDebut, resaPosFin); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaDate"; 
+    }; 
+    name = ResaDate; 
+    primaryKeyAttributes = (resaDebut, resaOrdre); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

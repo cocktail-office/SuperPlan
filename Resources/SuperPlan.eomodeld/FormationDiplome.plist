@@ -1,0 +1,197 @@
+{
+    attributes = (
+        {
+            columnName = "COMP_CODE"; 
+            externalType = VARCHAR2; 
+            name = compCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            columnName = "ETAB_CODE"; 
+            externalType = VARCHAR2; 
+            name = etabCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDIP_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = fdipAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FDIP_ARRIVEE"; 
+            externalType = NUMBER; 
+            name = fdipArrivee; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDIP_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdipCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            columnName = "FDIP_CYCLE"; 
+            externalType = NUMBER; 
+            name = fdipCycle; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDIP_DEPART"; 
+            externalType = NUMBER; 
+            name = fdipDepart; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDIP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fdipLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "FDIP_MENTION"; 
+            externalType = VARCHAR2; 
+            name = fdipMention; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDIP_MODELE"; 
+            externalType = VARCHAR2; 
+            name = fdipModele; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FDIP_SPECIALITE"; 
+            externalType = VARCHAR2; 
+            name = fdipSpecialite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "FDIP_TYPE_DROIT"; 
+            externalType = VARCHAR2; 
+            name = fdipTypeDroit; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "FDOM_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdomCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FGRA_CODE"; 
+            externalType = VARCHAR2; 
+            name = fgraCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "FVOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = fvocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SREMO_CODE"; 
+            externalType = VARCHAR2; 
+            name = sremoCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        compCode, 
+        etabCode, 
+        fdipAbreviation, 
+        fdipArrivee, 
+        fdipCode, 
+        fdipCycle, 
+        fdipDepart, 
+        fdipLibelle, 
+        fdipMention, 
+        fdipModele, 
+        fdipSpecialite, 
+        fdipTypeDroit, 
+        fdomCode, 
+        fgraCode, 
+        fvocCode, 
+        sremoCode
+    ); 
+    className = "org.cocktail.superplan.server.metier.FormationDiplome"; 
+    classProperties = (
+        compCode, 
+        etabCode, 
+        fdipAbreviation, 
+        fdipArrivee, 
+        fdipCycle, 
+        fdipDepart, 
+        fdipLibelle, 
+        fdipMention, 
+        fdipModele, 
+        fdipSpecialite, 
+        fdipTypeDroit, 
+        fdomCode, 
+        fgraCode, 
+        fvocCode, 
+        sremoCode
+    ); 
+    externalName = "SCOLARITE.SCOL_FORMATION_DIPLOME"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            compCode, 
+            etabCode, 
+            fdipAbreviation, 
+            fdipArrivee, 
+            fdipCycle, 
+            fdipDepart, 
+            fdipLibelle, 
+            fdipMention, 
+            fdipModele, 
+            fdipSpecialite, 
+            fdipTypeDroit, 
+            fdomCode, 
+            fgraCode, 
+            fvocCode, 
+            sremoCode
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.FormationDiplome"; 
+    }; 
+    name = FormationDiplome; 
+    primaryKeyAttributes = (fdipCode); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

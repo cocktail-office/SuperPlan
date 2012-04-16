@@ -1,0 +1,173 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "COLOR_CODE"; 
+            externalType = VARCHAR2; 
+            name = colorCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_GROUPE_PREVU"; 
+            externalType = NUMBER; 
+            name = mapGroupePrevu; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mapLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "MAP_SEUIL"; 
+            externalType = NUMBER; 
+            name = mapSeuil; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_VALEUR"; 
+            externalType = NUMBER; 
+            name = mapValeur; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MHCO_CODE"; 
+            externalType = VARCHAR2; 
+            name = mhcoCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MHMO_CODE"; 
+            externalType = VARCHAR2; 
+            name = mhmoCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        fannKey, 
+        mapGroupePrevu, 
+        mapKey, 
+        mapLibelle, 
+        mapSeuil, 
+        mapValeur, 
+        mhcoCode, 
+        mhmoCode, 
+        colorCode
+    ); 
+    className = "org.cocktail.superplan.server.metier.VMaquetteAp"; 
+    classProperties = (
+        fannKey, 
+        mapGroupePrevu, 
+        mapLibelle, 
+        mapSeuil, 
+        mapValeur, 
+        mhcoCode, 
+        mhmoCode, 
+        colorCode, 
+        horaireCode, 
+        scolFormationAnnee, 
+        scolGroupeObjets, 
+        mapKey, 
+        vParcoursAps, 
+        maquetteRepartitionAps, 
+        vScolMaquetteApEc
+    ); 
+    externalName = "EDTSCOL.V_MAQUETTE_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            mapGroupePrevu, 
+            mapLibelle, 
+            mapSeuil, 
+            mapValeur, 
+            mhcoCode, 
+            mhmoCode, 
+            colorCode, 
+            horaireCode, 
+            scolFormationAnnee, 
+            scolGroupeObjets, 
+            vScolMaquetteApEc
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VMaquetteAp"; 
+    }; 
+    name = VMaquetteAp; 
+    primaryKeyAttributes = (mapKey); 
+    relationships = (
+        {
+            destination = HoraireCode; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mhcoCode; sourceAttribute = mhcoCode; }); 
+            name = horaireCode; 
+        }, 
+        {
+            destination = MaquetteRepartitionAp; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteRepartitionAps; 
+        }, 
+        {
+            destination = FormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }, 
+        {
+            destination = ScolGroupeObjet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = scolGroupeObjets; 
+        }, 
+        {
+            destination = VParcoursAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = vParcoursAps; 
+        }, 
+        {
+            destination = VScolMaquetteApEc; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = vScolMaquetteApEc; 
+        }
+    ); 
+}

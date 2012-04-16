@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            columnName = "RFO_KEY"; 
+            externalType = NUMBER; 
+            name = rfoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RTO_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = rtoCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 400; 
+        }, 
+        {
+            columnName = "RTO_KEY"; 
+            externalType = NUMBER; 
+            name = rtoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RTO_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = rtoLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }
+    ); 
+    attributesUsedForLocking = (rtoKey, rtoLibelle, rtoCommentaire, rfoKey); 
+    className = "org.cocktail.superplan.server.metier.ResaTypeObjet"; 
+    classProperties = (rtoLibelle, rtoCommentaire, resaFamilleObjet, resaObjets); 
+    externalName = "EDTSCOL.RESA_TYPE_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (rtoLibelle, rtoCommentaire, resaFamilleObjet, resaObjets); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaTypeObjet"; 
+    }; 
+    name = ResaTypeObjet; 
+    primaryKeyAttributes = (rtoKey); 
+    relationships = (
+        {
+            destination = ResaFamilleObjet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rfoKey; sourceAttribute = rfoKey; }); 
+            name = resaFamilleObjet; 
+        }, 
+        {
+            destination = ResaObjet; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = rtoKey; sourceAttribute = rtoKey; }); 
+            name = resaObjets; 
+        }
+    ); 
+}

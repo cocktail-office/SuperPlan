@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            columnName = "LOT_KEY"; 
+            externalType = NUMBER; 
+            name = lotKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = lotLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 150; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (lotKey, lotLibelle, noIndividu); 
+    className = "org.cocktail.superplan.server.metier.LotSalle"; 
+    classProperties = (lotLibelle, individuUlr, repartLotSalles, repartLotIndividus); 
+    externalName = "EDTSCOL.LOT_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (lotLibelle, individuUlr, repartLotSalles, repartLotIndividus); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LotSalle"; 
+    }; 
+    name = LotSalle; 
+    primaryKeyAttributes = (lotKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }, 
+        {
+            destination = RepartLotIndividu; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lotKey; sourceAttribute = lotKey; }); 
+            name = repartLotIndividus; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = RepartLotSalle; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lotKey; sourceAttribute = lotKey; }); 
+            name = repartLotSalles; 
+        }
+    ); 
+}

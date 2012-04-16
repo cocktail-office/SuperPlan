@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (cLocal, cStructure); 
+    className = "org.cocktail.superplan.server.metier.Gardien"; 
+    classProperties = (cLocal, local, repartStructures); 
+    externalName = "EDTSCOL.GARDIEN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cLocal); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Gardien"; 
+    }; 
+    name = Gardien; 
+    primaryKeyAttributes = (cLocal, cStructure); 
+    relationships = (
+        {
+            destination = Local; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = local; 
+        }, 
+        {
+            destination = RepartStructure; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = repartStructures; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

@@ -1,0 +1,85 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, cStructurePere, llStructure, persId); 
+    className = "org.cocktail.superplan.server.metier.VTreeObjets"; 
+    classProperties = (
+        cStructure, 
+        cStructurePere, 
+        llStructure, 
+        persId, 
+        toObjetFils, 
+        toObjetPere, 
+        toPersonne
+    ); 
+    externalName = "EDTSCOL.V_TREE_OBJETS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            llStructure, 
+            persId, 
+            toObjetFils, 
+            toObjetPere, 
+            toPersonne
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VTreeObjets"; 
+    }; 
+    name = VTreeObjets; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = VTreeObjets; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructurePere; sourceAttribute = cStructure; }); 
+            name = toObjetFils; 
+        }, 
+        {
+            destination = VTreeObjets; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = toObjetPere; 
+        }, 
+        {
+            destination = Personne; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toPersonne; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "RFO_COMMENTAIRE"; 
+            externalType = VARCHAR2; 
+            name = rfoCommentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 400; 
+        }, 
+        {
+            columnName = "RFO_KEY"; 
+            externalType = NUMBER; 
+            name = rfoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RFO_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = rfoLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }
+    ); 
+    attributesUsedForLocking = (rfoKey, rfoLibelle, rfoCommentaire); 
+    className = "org.cocktail.superplan.server.metier.ResaFamilleObjet"; 
+    classProperties = (rfoLibelle, rfoCommentaire, resaTypesObjet); 
+    externalName = "EDTSCOL.RESA_FAMILLE_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (rfoLibelle, rfoCommentaire, resaTypesObjet); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaFamilleObjet"; 
+    }; 
+    name = ResaFamilleObjet; 
+    primaryKeyAttributes = (rfoKey); 
+    relationships = (
+        {
+            destination = ResaTypeObjet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rfoKey; sourceAttribute = rfoKey; }); 
+            name = resaTypesObjet; 
+        }
+    ); 
+}

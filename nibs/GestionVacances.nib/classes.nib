@@ -1,0 +1,39 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                ajouterVacances = id; 
+                modifierVacances = id; 
+                rechercherHabilitation = id; 
+                selectionnerDebut = id; 
+                selectionnerFin = id; 
+                supprimerVacances = id; 
+                valider = id; 
+            }; 
+            CLASS = "edtscol.client.GestionVacances"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAjouterVac = id; 
+                bDebutVac = id; 
+                bFinVac = id; 
+                bModifierVac = id; 
+                bSupprimerVac = id; 
+                bValider = id; 
+                comboAnnees = id; 
+                eodHabilitation = id; 
+                eodVacances = id; 
+                matPrefDip = id; 
+                tDebut = id; 
+                tDiplome = id; 
+                tFin = id; 
+                tGrade = id; 
+                taCommentaires = id; 
+                tableHabilitation = id; 
+                tableVacances = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,179 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_CODE"; 
+            externalType = VARCHAR2; 
+            name = ggrpCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = ggrpLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GOBJ_KEY"; 
+            externalType = NUMBER; 
+            name = gobjKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAPG_KEY"; 
+            externalType = VARCHAR2; 
+            name = mapgKey; 
+            valueClassName = NSString; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MAP_GROUPE_PREVU"; 
+            externalType = NUMBER; 
+            name = mapGroupePrevu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mapLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "MAP_LIBELLE_AFFICHAGE"; 
+            externalType = VARCHAR2; 
+            name = mapLibelleAffichage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "MAP_SEUIL"; 
+            externalType = NUMBER; 
+            name = mapSeuil; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_VALEUR"; 
+            externalType = NUMBER; 
+            name = mapValeur; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        ggrpCode, 
+        ggrpKey, 
+        ggrpLibelle, 
+        gobjKey, 
+        mapgKey, 
+        mapGroupePrevu, 
+        mapKey, 
+        mapLibelle, 
+        mapLibelleAffichage, 
+        mapSeuil, 
+        mapValeur
+    ); 
+    className = "org.cocktail.superplan.server.metier.VMaquetteApGroupes"; 
+    classProperties = (
+        ggrpCode, 
+        ggrpKey, 
+        ggrpLibelle, 
+        gobjKey, 
+        mapgKey, 
+        mapGroupePrevu, 
+        mapKey, 
+        mapLibelle, 
+        mapLibelleAffichage, 
+        mapSeuil, 
+        mapValeur, 
+        maquetteAp, 
+        scolGroupeGrp, 
+        scolGroupeObjet, 
+        vScolMaquetteApEc
+    ); 
+    externalName = "EDTSCOL.V_MAQUETTE_AP_GROUPES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ggrpCode, 
+            ggrpKey, 
+            ggrpLibelle, 
+            gobjKey, 
+            mapgKey, 
+            mapGroupePrevu, 
+            mapKey, 
+            mapLibelle, 
+            mapLibelleAffichage, 
+            mapSeuil, 
+            mapValeur, 
+            maquetteAp, 
+            scolGroupeGrp, 
+            scolGroupeObjet, 
+            vScolMaquetteApEc
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VMaquetteApGroupes"; 
+    }; 
+    name = VMaquetteApGroupes; 
+    primaryKeyAttributes = (mapgKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = scolGroupeGrp; 
+        }, 
+        {
+            destination = ScolGroupeObjet; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = gobjKey; sourceAttribute = gobjKey; }); 
+            name = scolGroupeObjet; 
+        }, 
+        {
+            destination = VScolMaquetteApEc; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = vScolMaquetteApEc; 
+        }
+    ); 
+}

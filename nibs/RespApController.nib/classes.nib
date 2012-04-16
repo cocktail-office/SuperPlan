@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; valider = id; }; 
+            CLASS = "edtscol.client.gestionreservation.RespApController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {bAnnuler = id; bValider = id; eodIndividu = id; tableIndividu = id; }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

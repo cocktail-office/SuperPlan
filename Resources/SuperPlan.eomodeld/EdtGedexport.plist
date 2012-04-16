@@ -1,0 +1,59 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DOC_ID"; 
+            externalType = NUMBER; 
+            name = docId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EG_KEY"; 
+            externalType = NUMBER; 
+            name = egKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MOT_CLEF"; 
+            externalType = VARCHAR2; 
+            name = motClef; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 512; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (dCreation, dModification, docId, egKey, motClef, noIndividu); 
+    className = "org.cocktail.superplan.server.metier.EdtGedexport"; 
+    classProperties = (dCreation, dModification, docId, motClef, noIndividu); 
+    externalName = "EDTSCOL.EDT_GEDEXPORT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dCreation, dModification, docId, motClef, noIndividu); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.EdtGedexport"; 
+    }; 
+    name = EdtGedexport; 
+    primaryKeyAttributes = (egKey); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

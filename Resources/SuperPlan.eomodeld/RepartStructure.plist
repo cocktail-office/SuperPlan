@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, persId); 
+    className = "org.cocktail.superplan.server.metier.RepartStructure"; 
+    classProperties = (cStructure, individuUlr, persId, structureUlr); 
+    externalName = "GRHUM.REPART_STRUCTURE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cStructure, individuUlr, persId, structureUlr); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.RepartStructure"; 
+    }; 
+    name = RepartStructure; 
+    primaryKeyAttributes = (cStructure, persId); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = individuUlr; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = structureUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

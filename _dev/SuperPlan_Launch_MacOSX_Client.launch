@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${workspace}"/>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home/bin/java"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-classpath /System/Library/Java/ClientSTD.jar -Dcom.webobjects.eoapplication.dialog.localization.Connect=&quot;Connect&quot; -Dcom.webobjects.eoapplication.dialog.localization.Quit=&quot;Quit&quot; -Dcom.webobjects.eoapplication.dialog.localization.URL=&quot;URL&quot; -Dcom.webobjects.eoapplication.dialog.localization.Application=&quot;JavaClient Application&quot; -Dcom.webobjects.eoapplication.dialog.localization.ErrorDescription=&quot;Connection error: Please verify URL is correct&quot; com.webobjects.eoapplication.client.EOClientApplicationSupport -applicationURL http://localhost:7777"/>
+</launchConfiguration>

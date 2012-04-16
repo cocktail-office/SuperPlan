@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = "CTH_HEURE_DEBUT"; 
+            externalType = DATE; 
+            name = cthHeureDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CTH_HEURE_FIN"; 
+            externalType = DATE; 
+            name = cthHeureFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CTH_KEY"; 
+            externalType = NUMBER; 
+            name = cthKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CTJ_KEY"; 
+            externalType = NUMBER; 
+            name = ctjKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cthHeureDebut, cthHeureFin, cthKey, ctjKey); 
+    className = "org.cocktail.superplan.server.metier.ContrainteHeure"; 
+    classProperties = (contrainteJour, cthHeureDebut, cthHeureFin); 
+    externalName = "EDTSCOL.CONTRAINTE_HEURE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (contrainteJour, cthHeureDebut, cthHeureFin); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ContrainteHeure"; 
+    }; 
+    name = ContrainteHeure; 
+    primaryKeyAttributes = (cthKey); 
+    relationships = (
+        {
+            destination = ContrainteJour; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ctjKey; sourceAttribute = ctjKey; }); 
+            name = contrainteJour; 
+        }
+    ); 
+}

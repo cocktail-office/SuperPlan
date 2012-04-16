@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                afficherDansInspecteur = id; 
+                choixDateDebRecherche = id; 
+                choixDateFinRecherche = id; 
+                rechercherCreneaux = id; 
+            }; 
+            CLASS = "edtscol.client.RechercheCreneaux"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAfficherInspecteur = id; 
+                bDebRecherche = id; 
+                bFinRecherche = id; 
+                btRechCreneaux = id; 
+                cDimanche = id; 
+                cSamedi = id; 
+                cToutes = id; 
+                eodCreneaux = id; 
+                matTypeRes = id; 
+                swapPanier = id; 
+                tDateDebut = id; 
+                tDateFin = id; 
+                tHDebutCreneau = id; 
+                tHDuree = id; 
+                tHFinCreneau = id; 
+                tMDebutCreneau = id; 
+                tMDuree = id; 
+                tMFinCreneau = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.SwapView"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

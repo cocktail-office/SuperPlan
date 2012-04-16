@@ -1,0 +1,217 @@
+{
+    attributes = (
+        {
+            columnName = "EELT_CODE"; 
+            externalType = VARCHAR2; 
+            name = eeltCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "EENT_COEFFICIENT"; 
+            externalType = NUMBER; 
+            name = eentCoefficient; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EENT_DATE_DEBUT"; 
+            externalType = DATE; 
+            name = eentDateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EENT_DATE_FIN"; 
+            externalType = DATE; 
+            name = eentDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EENT_DUREE"; 
+            externalType = DATE; 
+            name = eentDuree; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EENT_EPREUVE"; 
+            externalType = NUMBER; 
+            name = eentEpreuve; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EENT_KEY"; 
+            externalType = NUMBER; 
+            name = eentKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EENT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = eentLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "EENT_NOTE_BASE"; 
+            externalType = NUMBER; 
+            name = eentNoteBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "EENT_QCM"; 
+            externalType = VARCHAR2; 
+            name = eentQcm; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "EENT_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = eentSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EENT_SESSION"; 
+            externalType = NUMBER; 
+            name = eentSession; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EENT_TRAITE"; 
+            externalType = NUMBER; 
+            name = eentTraite; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EENT_VALIDITE"; 
+            externalType = VARCHAR2; 
+            name = eentValidite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        eeltCode, 
+        eentCoefficient, 
+        eentDateDebut, 
+        eentDateFin, 
+        eentDuree, 
+        eentEpreuve, 
+        eentKey, 
+        eentLibelle, 
+        eentNoteBase, 
+        eentQcm, 
+        eentSemestre, 
+        eentSession, 
+        eentTraite, 
+        eentValidite, 
+        fannKey, 
+        mecKey, 
+        persId
+    ); 
+    className = "org.cocktail.superplan.server.metier.ExamenEntete"; 
+    classProperties = (
+        ec, 
+        eeltCode, 
+        eentCoefficient, 
+        eentDateDebut, 
+        eentDateFin, 
+        eentDuree, 
+        eentEpreuve, 
+        eentLibelle, 
+        eentNoteBase, 
+        eentQcm, 
+        eentSemestre, 
+        eentSession, 
+        eentTraite, 
+        eentValidite, 
+        fannKey, 
+        persId
+    ); 
+    externalName = "SCOLARITE.SCOL_EXAMEN_ENTETE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            ec, 
+            eeltCode, 
+            eentCoefficient, 
+            eentDateDebut, 
+            eentDateFin, 
+            eentDuree, 
+            eentEpreuve, 
+            eentLibelle, 
+            eentNoteBase, 
+            eentQcm, 
+            eentSemestre, 
+            eentSession, 
+            eentTraite, 
+            eentValidite, 
+            fannKey, 
+            persId
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ExamenEntete"; 
+    }; 
+    name = ExamenEntete; 
+    primaryKeyAttributes = (eentKey); 
+    relationships = (
+        {
+            destination = MaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = ec; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

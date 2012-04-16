@@ -1,0 +1,94 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            columnName = NIVEAU; 
+            externalType = NUMBER; 
+            name = niveau; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, cStructurePere, llStructure, persId, niveau); 
+    className = "org.cocktail.superplan.server.metier.VTreeSalles"; 
+    classProperties = (
+        cStructure, 
+        cStructurePere, 
+        llStructure, 
+        persId, 
+        toPersonne, 
+        toSalleFils, 
+        toSallePere, 
+        niveau
+    ); 
+    externalName = "GRHUM.V_TREE_SALLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            llStructure, 
+            persId, 
+            toPersonne, 
+            toSalleFils, 
+            toSallePere, 
+            niveau
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VTreeSalles"; 
+    }; 
+    name = VTreeSalles; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = Personne; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toPersonne; 
+        }, 
+        {
+            destination = VTreeSalles; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructurePere; sourceAttribute = cStructure; }); 
+            name = toSalleFils; 
+        }, 
+        {
+            destination = VTreeSalles; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = toSallePere; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

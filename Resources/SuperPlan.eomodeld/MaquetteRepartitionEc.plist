@@ -1,0 +1,181 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MREC_BONIFIABLE"; 
+            externalType = NUMBER; 
+            name = mrecBonifiable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MREC_COEFFICIENT"; 
+            externalType = NUMBER; 
+            name = mrecCoefficient; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MREC_COMPTABILISABLE"; 
+            externalType = NUMBER; 
+            name = mrecComptabilisable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MREC_KEY"; 
+            externalType = NUMBER; 
+            name = mrecKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MREC_NIVEAU"; 
+            externalType = VARCHAR2; 
+            name = mrecNiveau; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MREC_NOTE_BASE"; 
+            externalType = NUMBER; 
+            name = mrecNoteBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MREC_NOTE_ELIMINATION"; 
+            externalType = NUMBER; 
+            name = mrecNoteElimination; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MREC_NOTE_OBTENTION"; 
+            externalType = NUMBER; 
+            name = mrecNoteObtention; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MREC_ORDRE"; 
+            externalType = NUMBER; 
+            name = mrecOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MTEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mtecCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MUE_KEY"; 
+            externalType = NUMBER; 
+            name = mueKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        fannKey, 
+        mecKey, 
+        mrecBonifiable, 
+        mrecCoefficient, 
+        mrecComptabilisable, 
+        mrecKey, 
+        mrecNiveau, 
+        mrecNoteBase, 
+        mrecNoteElimination, 
+        mrecNoteObtention, 
+        mrecOrdre, 
+        mtecCode, 
+        mueKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.MaquetteRepartitionEc"; 
+    classProperties = (
+        fannKey, 
+        maquetteEc, 
+        maquetteUe, 
+        mecKey, 
+        mrecBonifiable, 
+        mrecCoefficient, 
+        mrecComptabilisable, 
+        mrecNiveau, 
+        mrecNoteBase, 
+        mrecNoteElimination, 
+        mrecNoteObtention, 
+        mrecOrdre, 
+        mtecCode, 
+        mueKey
+    ); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_REPARTITION_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fannKey, 
+            maquetteEc, 
+            maquetteUe, 
+            mecKey, 
+            mrecBonifiable, 
+            mrecCoefficient, 
+            mrecComptabilisable, 
+            mrecNiveau, 
+            mrecNoteBase, 
+            mrecNoteElimination, 
+            mrecNoteObtention, 
+            mrecOrdre, 
+            mtecCode, 
+            mueKey
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteRepartitionEc"; 
+    }; 
+    name = MaquetteRepartitionEc; 
+    primaryKeyAttributes = (mrecKey); 
+    relationships = (
+        {
+            destination = MaquetteEc; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteEc; 
+        }, 
+        {
+            destination = MaquetteUe; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mueKey; sourceAttribute = mueKey; }); 
+            name = maquetteUe; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

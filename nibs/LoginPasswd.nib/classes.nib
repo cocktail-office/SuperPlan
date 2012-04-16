@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; connecter = id; }; 
+            CLASS = "edtscol.client.LoginPasswd"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                btAnnuler = id; 
+                btConnecter = id; 
+                iconeLogin = id; 
+                tfAlerte = id; 
+                tfLogin = id; 
+                tfPasswd = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

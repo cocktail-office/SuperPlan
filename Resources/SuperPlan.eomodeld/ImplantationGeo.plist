@@ -1,0 +1,50 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_IMPLANTATION"; 
+            externalType = VARCHAR2; 
+            name = cImplantation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "IMGEO_ORDRE"; 
+            externalType = NUMBER; 
+            name = imgeoOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_IMPLANTATION_GEO"; 
+            externalType = VARCHAR2; 
+            name = lcImplantationGeo; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_IMPLANTATION_GEO"; 
+            externalType = VARCHAR2; 
+            name = llImplantationGeo; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }
+    ); 
+    attributesUsedForLocking = (cImplantation, imgeoOrdre, lcImplantationGeo, llImplantationGeo); 
+    className = "org.cocktail.superplan.server.metier.ImplantationGeo"; 
+    classProperties = (cImplantation, lcImplantationGeo, llImplantationGeo); 
+    externalName = "GRHUM.IMPLANTATION_GEO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cImplantation, lcImplantationGeo, llImplantationGeo); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ImplantationGeo"; 
+    }; 
+    name = ImplantationGeo; 
+    primaryKeyAttributes = (imgeoOrdre); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

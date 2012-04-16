@@ -1,0 +1,116 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OBJET_KEY"; 
+            externalType = NUMBER; 
+            name = logObjetKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_DATE_VALIDATION"; 
+            externalType = DATE; 
+            name = logOldDateValidation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_MOTIF_ANNULATION"; 
+            externalType = VARCHAR2; 
+            name = logOldMotifAnnulation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_NO_INDIVIDU_VAL"; 
+            externalType = NUMBER; 
+            name = logOldNoIndividuVal; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_ETAT"; 
+            externalType = VARCHAR2; 
+            name = logOldResaEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RO_KEY"; 
+            externalType = NUMBER; 
+            name = logOldRoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        logKey, 
+        logObjetKey, 
+        logOldDateValidation, 
+        logOldMotifAnnulation, 
+        logOldNoIndividuVal, 
+        logOldResaEtat, 
+        logOldResaKey, 
+        logOldRoKey
+    ); 
+    className = "org.cocktail.superplan.server.metier.LogReservationObjet"; 
+    classProperties = (
+        individuValideur, 
+        logOldDateValidation, 
+        logOldMotifAnnulation, 
+        logOldResaEtat, 
+        logOldResaKey, 
+        resaObjet
+    ); 
+    externalName = "EDTSCOL.LOG_RESERVATION_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            individuValideur, 
+            logOldDateValidation, 
+            logOldMotifAnnulation, 
+            logOldResaEtat, 
+            logOldResaKey, 
+            resaObjet
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationObjet"; 
+    }; 
+    name = LogReservationObjet; 
+    primaryKeyAttributes = (logObjetKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = logOldNoIndividuVal; }); 
+            name = individuValideur; 
+        }, 
+        {
+            destination = ResaObjet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = logOldRoKey; }); 
+            name = resaObjet; 
+        }
+    ); 
+}

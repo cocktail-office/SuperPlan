@@ -1,0 +1,68 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_EXAMEN_KEY"; 
+            externalType = NUMBER; 
+            name = logExamenKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_EENT_KEY"; 
+            externalType = NUMBER; 
+            name = logOldEentKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOG_OLD_GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = logOldGgrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (logExamenKey, logKey, logOldEentKey, logOldGgrpKey, logOldResaKey); 
+    className = "org.cocktail.superplan.server.metier.LogReservationExamen"; 
+    classProperties = (examenEntete, logOldResaKey, scolGroupeGrp); 
+    externalName = "EDTSCOL.LOG_RESERVATION_EXAMEN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (examenEntete, logOldResaKey, scolGroupeGrp); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationExamen"; 
+    }; 
+    name = LogReservationExamen; 
+    primaryKeyAttributes = (logExamenKey); 
+    relationships = (
+        {
+            destination = ExamenEntete; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eentKey; sourceAttribute = logOldEentKey; }); 
+            name = examenEntete; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = logOldGgrpKey; }); 
+            name = scolGroupeGrp; 
+        }
+    ); 
+}

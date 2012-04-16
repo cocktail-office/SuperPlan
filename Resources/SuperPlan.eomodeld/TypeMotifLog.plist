@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "TML_ACTION"; 
+            externalType = VARCHAR2; 
+            name = tmlAction; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "TML_KEY"; 
+            externalType = NUMBER; 
+            name = tmlKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TML_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = tmlMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (tmlAction, tmlKey, tmlMotif); 
+    className = "org.cocktail.superplan.server.metier.TypeMotifLog"; 
+    classProperties = (tmlAction, tmlMotif); 
+    externalName = "EDTSCOL.TYPE_MOTIF_LOG"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (tmlAction, tmlMotif); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.TypeMotifLog"; 
+    }; 
+    name = TypeMotifLog; 
+    primaryKeyAttributes = (tmlKey); 
+}

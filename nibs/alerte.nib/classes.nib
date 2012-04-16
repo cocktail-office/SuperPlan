@@ -1,0 +1,21 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {alerter = id; annuler = id; }; 
+            CLASS = "edtscol.client.Alerte"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                btAnnuler = id; 
+                btOk = id; 
+                eodResas = id; 
+                sliderAlerte = id; 
+                tableResas = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {CLASS = "javax.swing.JLabel"; LANGUAGE = Java; SUPERCLASS = NSView; }, 
+        {CLASS = "javax.swing.JSlider"; LANGUAGE = Java; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

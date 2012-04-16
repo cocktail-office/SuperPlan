@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MPAR_KEY"; 
+            externalType = NUMBER; 
+            name = mparKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MRSEM_KEY"; 
+            externalType = NUMBER; 
+            name = mrsemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, mparKey, mrsemKey, msemKey); 
+    className = "org.cocktail.superplan.server.metier.MaquetteRepartitionSem"; 
+    classProperties = (fannKey, mparKey, mrsemKey, parcours, semestre); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_REPARTITION_SEM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, mparKey, mrsemKey, parcours, semestre); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteRepartitionSem"; 
+    }; 
+    name = MaquetteRepartitionSem; 
+    primaryKeyAttributes = (mrsemKey); 
+    relationships = (
+        {
+            destination = MaquetteParcours; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mparKey; sourceAttribute = mparKey; }); 
+            name = parcours; 
+        }, 
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

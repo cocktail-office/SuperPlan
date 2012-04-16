@@ -1,0 +1,88 @@
+{
+    attributes = (
+        {
+            columnName = "HCOMP_KEY"; 
+            externalType = NUMBER; 
+            name = hcompKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "HCR_TAG"; 
+            externalType = NUMBER; 
+            name = hcrTag; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MAP_KEY"; 
+            externalType = NUMBER; 
+            name = mapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PER_KEY"; 
+            externalType = NUMBER; 
+            name = perKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (hcompKey, hcrTag, mapKey, noIndividu, perKey, resaKey); 
+    className = "org.cocktail.superplan.server.metier.HcompRecup"; 
+    classProperties = (hcrTag, individuUlr, maquetteAp, periodicite, reservation); 
+    externalName = "EDTSCOL.HCOMP_RECUP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (hcrTag, individuUlr, maquetteAp, periodicite, reservation); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.HcompRecup"; 
+    }; 
+    name = HcompRecup; 
+    primaryKeyAttributes = (hcompKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }, 
+        {
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = mapKey; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = Periodicite; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perKey; sourceAttribute = perKey; }); 
+            name = periodicite; 
+        }, 
+        {
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            columnName = "CPA_KEY"; 
+            externalType = NUMBER; 
+            name = cpaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CPAO_KEY"; 
+            externalType = NUMBER; 
+            name = cpaoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RO_KEY"; 
+            externalType = NUMBER; 
+            name = roKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cpaKey, cpaoKey, roKey); 
+    className = "org.cocktail.superplan.server.metier.CtrlParamApObjet"; 
+    classProperties = (ctrlParamAp, resaObjet); 
+    externalName = "EDTSCOL.CTRL_PARAM_AP_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ctrlParamAp, resaObjet); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlParamApObjet"; 
+    }; 
+    name = CtrlParamApObjet; 
+    primaryKeyAttributes = (cpaoKey); 
+    relationships = (
+        {
+            destination = CtrlParamAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cpaKey; sourceAttribute = cpaKey; }); 
+            name = ctrlParamAp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ResaObjet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = roKey; }); 
+            name = resaObjet; 
+        }
+    ); 
+}

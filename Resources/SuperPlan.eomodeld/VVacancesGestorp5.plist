@@ -1,0 +1,93 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = CODE; 
+            externalType = VARCHAR2; 
+            name = code; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            columnName = DATEDEB; 
+            externalType = DATE; 
+            name = datedeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DATEFIN; 
+            externalType = DATE; 
+            name = datefin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DUREE; 
+            externalType = FLOAT; 
+            name = duree; 
+            precision = 18; 
+            valueClassName = NSNumber; 
+            valueType = f; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = HDEB; 
+            externalType = FLOAT; 
+            name = hdeb; 
+            precision = 18; 
+            valueClassName = NSNumber; 
+            valueType = f; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = HFIN; 
+            externalType = FLOAT; 
+            name = hfin; 
+            precision = 18; 
+            valueClassName = NSNumber; 
+            valueType = f; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 25; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (code, datedeb, datefin, duree, hdeb, hfin, libelle, noIndividu); 
+    className = "org.cocktail.superplan.server.metier.VVacancesGestorp5"; 
+    classProperties = (code, datedeb, datefin, duree, hdeb, hfin, individuUlr, libelle, noIndividu); 
+    externalName = "GRHUM.V_VACANCES_GESTORP5"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (code, datedeb, datefin, duree, hdeb, hfin, individuUlr, libelle, noIndividu); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VVacancesGestorp5"; 
+    }; 
+    name = VVacancesGestorp5; 
+    primaryKeyAttributes = (datedeb, noIndividu); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

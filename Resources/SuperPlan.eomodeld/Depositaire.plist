@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, noIndividu); 
+    className = "org.cocktail.superplan.server.metier.Depositaire"; 
+    externalName = "GRHUM.DEPOSITAIRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = "org.cocktail.superplan.client.metier.Depositaire"; }; 
+    name = Depositaire; 
+    primaryKeyAttributes = (cStructure, noIndividu); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

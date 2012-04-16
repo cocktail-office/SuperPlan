@@ -1,0 +1,177 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CATEGORIE_PRINC"; 
+            externalType = NUMBER; 
+            name = categoriePrinc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "C_CIVILITE"; 
+            externalType = VARCHAR2; 
+            name = cCivilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_AGENDA"; 
+            externalType = VARCHAR2; 
+            name = indAgenda; 
+            valueClassName = NSString; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_PHOTO"; 
+            externalType = VARCHAR2; 
+            name = indPhoto; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_QUALITE"; 
+            externalType = VARCHAR2; 
+            name = indQualite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (indQualite, noIndividu, nomUsuel, persId, prenom, cCivilite, categoriePrinc); 
+    className = "org.cocktail.superplan.server.metier.IndividuUlr"; 
+    classProperties = (
+        cCivilite, 
+        indAgenda, 
+        indPhoto, 
+        indQualite, 
+        nomUsuel, 
+        persId, 
+        personne, 
+        prenom, 
+        repartStructures, 
+        temValide, 
+        toSecretariat, 
+        toStructureUlr, 
+        noIndividu, 
+        repartLotIndividus, 
+        supannCategorie, 
+        categoriePrinc
+    ); 
+    externalName = "GRHUM.INDIVIDU_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cCivilite, 
+            indAgenda, 
+            indPhoto, 
+            indQualite, 
+            nomUsuel, 
+            persId, 
+            personne, 
+            prenom, 
+            repartStructures, 
+            temValide, 
+            toSecretariat, 
+            toStructureUlr, 
+            noIndividu, 
+            repartLotIndividus, 
+            categoriePrinc, 
+            supannCategorie
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.IndividuUlr"; 
+    }; 
+    name = IndividuUlr; 
+    primaryKeyAttributes = (noIndividu); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Personne; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = personne; 
+        }, 
+        {
+            destination = RepartLotIndividu; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = repartLotIndividus; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = RepartStructure; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = repartStructures; 
+        }, 
+        {
+            destination = SupannCategorie; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = catNumero; sourceAttribute = categoriePrinc; }); 
+            name = supannCategorie; 
+        }, 
+        {
+            destination = Secretariat; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toSecretariat; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = grpResponsable; sourceAttribute = noIndividu; }); 
+            name = toStructureUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

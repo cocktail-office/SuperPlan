@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE entete SYSTEM "file:/C:/Documents%20and%20Settings/mparadot/Mes%20documents/Mes%20images/xml/Planning.dtd">
+<entete>
+    <diplome>Droits, parcours1,Semestre1</diplome>
+    <semaine>semaine du 10/07/2004 au 16/07/2004</semaine>
+    <!-- A rajouter -->
+    <affichageHeure>
+        <!-- l'heure de debut de graduation-->
+        <heureDepart>8</heureDepart>
+        <!-- nombres d'heures a afficher au total-->
+        <nbsHeuresAffichees>13</nbsHeuresAffichees>
+    </affichageHeure>
+    <!-- pour chaque jour-->
+    <jour>
+        <!-- le non du jour et sa date et les groupes associé-->
+        <groupes>
+            <!-- Nom du jour-->
+            <nomDuJour>LUNDI</nomDuJour>
+            <!-- Date du jour-->
+            <dateDuJour>10.07.2004</dateDuJour>
+            <!-- Nombre de groupe a dessiné-->
+            <nbGroupe>4</nbGroupe>
+            <!-- Nom des groupes-->
+            <nomGroupe>
+                <name>TD1</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD2</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD3</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD4</name>
+            </nomGroupe>
+        </groupes>
+        <!-- liste des creneaux horaire-->
+        <listeCoursJournnee>
+            <nbCreneau>4</nbCreneau>
+            <!-- dans un creneau il y a des cours plein et des cours vide-->
+            <creneau>
+                <!-- un cours vide-->
+                <cours>
+                    <!-- nombres de colonnes sur lequel se tient le cours-->
+                    <width>24</width>
+                    <!-- nombre de ligne associé au cours-->
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+                <!-- un cours plein (vrais cours)-->
+                <cours>
+                    <!-- nombre de 1/4 heure sur lequel s'etend le cours-->
+                    <width>6</width>
+                    <!-- nombre de groupe consernné par ce cours-->
+                    <height>4</height>
+                    <!-- couleur des cellules-->
+                    <color>98FF12</color>
+                    <!-- info a affiché-->
+                    <texte>
+                        <contenu>CM : L11</contenu>
+                        <occupants>C.DESAIVRE</occupants>
+                        <salles>PAS : 123</salles>
+                    </texte>
+                </cours>
+                <!-- un cours vide-->
+                <cours>
+                    <!-- nombres de colonnes sur lequel se tient le cours-->
+                    <width>22</width>
+                    <!-- nombre de ligne associé au cours-->
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+            </creneau>
+            <!-- le nombre de creneau doivent être identique aux nombres de groupes-->
+            <creneau/>
+            <creneau/>
+            <creneau/>
+            <!-- REMARQUE-->
+            <!--le totale des width des cours ( d'un creneau) doit être egale aux nbsHeuresAffichees * 4 (car 1/4 heure utilisé)-->
+            <!--le totale des height des cours sur chaque unite de temps, doit être egale aux nbCreneau-->
+            <!--SI UN COURS EST SUR PLUSIEURS CRENEAUX (height > 1), alors ses width sont decompté dans chaqu'un de ces creneaux-->
+        </listeCoursJournnee>
+    </jour>
+    <jour>
+        <groupes>
+            <nomDuJour>MARDI</nomDuJour>
+            <dateDuJour>11.07.2004</dateDuJour>
+            <nbGroupe>4</nbGroupe>
+            <nomGroupe>
+                <name>TD1</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD2</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD3</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD4</name>
+            </nomGroupe>
+        </groupes>
+        <listeCoursJournnee>
+            <nbCreneau>4</nbCreneau>
+            <creneau>
+                <cours>
+                    <width>24</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+                <cours>
+                    <width>6</width>
+                    <height>4</height>
+                    <color>98FF12</color>
+                    <texte>
+                        <contenu>CM : L11</contenu>
+                        <occupants>C.DESAIVRE</occupants>
+                        <salles>PAS : 123</salles>
+                    </texte>
+                </cours>
+                <cours>
+                    <width>2</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+                <cours>
+                    <width>12</width>
+                    <height>2</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : L12[TD01]</contenu>
+                        <occupants>M.PARADOT</occupants>
+                        <salles>PAS : 137</salles>
+                    </texte>
+                </cours>
+                <cours>
+                    <width>8</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+            </creneau>
+            <creneau/>
+            <creneau>
+                <cours>
+                    <width>12</width>
+                    <height>2</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : L12[TD02]</contenu>
+                        <occupants>P.BENETEAU</occupants>
+                        <salles>PAS : 135</salles>
+                    </texte>
+                </cours>
+            </creneau>
+            <creneau/>
+        </listeCoursJournnee>
+    </jour>
+    <jour>
+        <groupes>
+            <nomDuJour>MERCREDI</nomDuJour>
+            <dateDuJour>12.07.2004</dateDuJour>
+            <nbGroupe>4</nbGroupe>
+            <nomGroupe>
+                <name>TD1</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD2</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD3</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD4</name>
+            </nomGroupe>
+        </groupes>
+        <listeCoursJournnee>
+            <nbCreneau>4</nbCreneau>
+            <creneau>
+                <cours>
+                    <width>24</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+                <cours>
+                    <width>6</width>
+                    <height>2</height>
+                    <color>98FF12</color>
+                    <texte>
+                        <contenu>CM : L12</contenu>
+                        <occupants>A.DESSAIVRE</occupants>
+                        <salles>PAS : 125/127</salles>
+                    </texte>
+                </cours>
+                <cours>
+                    <width>22</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+            </creneau>
+            <creneau/>
+            <creneau>
+                <cours>
+                    <width>6</width>
+                    <height>2</height>
+                    <color>98FF12</color>
+                    <texte>
+                        <contenu>CM : L11</contenu>
+                        <occupants>C.DESAIVRE</occupants>
+                        <salles>PAS : 123</salles>
+                    </texte>
+                </cours>
+            </creneau>
+            <creneau/>
+        </listeCoursJournnee>
+    </jour>
+    <jour>
+        <groupes>
+            <nomDuJour>JEUDI</nomDuJour>
+            <dateDuJour>13.07.2004</dateDuJour>
+            <nbGroupe>4</nbGroupe>
+            <nomGroupe>
+                <name>TD1</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD2</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD3</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD4</name>
+            </nomGroupe>
+        </groupes>
+        <listeCoursJournnee>
+            <nbCreneau>4</nbCreneau>
+            <creneau>
+                <cours>
+                    <width>16</width>
+                    <height>2</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : LD131[ATD01]</contenu>
+                        <occupants>A.STOCKUS</occupants>
+                        <salles>PAS : 136</salles>
+                    </texte>
+                </cours>
+                <cours>
+                    <width>36</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+            </creneau>
+            <creneau/>
+            <creneau>
+                <cours>
+                    <width>16</width>
+                    <height>2</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : LD131[ATD02]</contenu>
+                        <occupants>P.BERGER</occupants>
+                        <salles>PAS : 138</salles>
+                    </texte>
+                </cours>
+            </creneau>
+            <creneau/>
+        </listeCoursJournnee>
+    </jour>
+    <jour>
+        <groupes>
+            <nomDuJour>VENDREDI</nomDuJour>
+            <dateDuJour>14.07.2004</dateDuJour>
+            <nbGroupe>4</nbGroupe>
+            <nomGroupe>
+                <name>TD1</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD2</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD3</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD4</name>
+            </nomGroupe>
+        </groupes>
+        <listeCoursJournnee>
+            <nbCreneau>4</nbCreneau>
+            <creneau>
+                <cours>
+                    <width>52</width>
+                    <height>4</height>
+                    <color>EEEEEE</color>
+                </cours>
+            </creneau>
+            <creneau/>
+            <creneau/>
+            <creneau/>
+        </listeCoursJournnee>
+    </jour>
+    <jour>
+        <groupes>
+            <nomDuJour>SAMEDI</nomDuJour>
+            <dateDuJour>15.07.2004</dateDuJour>
+            <nbGroupe>6</nbGroupe>
+            <nomGroupe>
+                <name>TD1</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD2</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD3</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD4</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD5</name>
+            </nomGroupe>
+            <nomGroupe>
+                <name>TD6</name>
+            </nomGroupe>
+        </groupes>
+        <listeCoursJournnee>
+            <nbCreneau>6</nbCreneau>
+            <creneau>
+                <cours>
+                    <width>16</width>
+                    <height>1</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : LD131[ATD01]</contenu>
+                        <occupants>A.STOCKUS</occupants>
+                        <salles>PAS : 136</salles>
+                    </texte>
+                </cours>
+                <cours>
+                    <width>36</width>
+                    <height>6</height>
+                    <color>EEEEEE</color>
+                </cours>
+            </creneau>
+            <creneau>
+                <cours>
+                    <width>16</width>
+                    <height>1</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : LD131[ATD01]</contenu>
+                        <occupants>A.STOCKUS</occupants>
+                        <salles>PAS : 137</salles>
+                    </texte>
+                </cours>
+            </creneau>
+            <creneau>
+                <cours>
+                    <width>16</width>
+                    <height>1</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : LD132</contenu>
+                        <occupants>A.STOCKUS</occupants>
+                        <salles>PAS : 138</salles>
+                    </texte>
+                </cours>
+            </creneau>
+            <creneau>
+                <cours>
+                    <width>16</width>
+                    <height>3</height>
+                    <color>98FFFF</color>
+                    <texte>
+                        <contenu>TD : LD134</contenu>
+                        <occupants>A.STOCKUS</occupants>
+                        <salles>PAS : 140</salles>
+                    </texte>
+                </cours>
+            </creneau>
+            <creneau/>
+            <creneau/>
+        </listeCoursJournnee>
+    </jour>
+</entete>

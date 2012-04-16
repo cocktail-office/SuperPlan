@@ -1,0 +1,42 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                choisirDebut = id; 
+                choisirFin = id; 
+                imprimerElementIndividuTotal = id; 
+                rechercher = id; 
+                rechercherHabilitation = id; 
+                voirDetails = id; 
+            }; 
+            CLASS = "edtscol.client.HCompCtrl"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAfficher = id; 
+                bDebut = id; 
+                bFin = id; 
+                bImprimer = id; 
+                bRechercheHab = id; 
+                bVoirDetails = id; 
+                comboAnnee = id; 
+                comboHoraireCode = id; 
+                comboParcours = id; 
+                comboSemestre = id; 
+                eodHabilitation = id; 
+                eodIndividuTotal = id; 
+                eodMaquetteAp = id; 
+                matTypeHcomp = id; 
+                tDebut = id; 
+                tDiplome = id; 
+                tFin = id; 
+                tGrade = id; 
+                tableHabilitation = id; 
+                tableIndividuTotal = id; 
+                tableMaquetteAp = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

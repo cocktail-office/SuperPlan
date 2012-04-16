@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "KEY_NEW"; 
+            externalType = NUMBER; 
+            name = keyNew; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "KEY_OLD"; 
+            externalType = NUMBER; 
+            name = keyOld; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (keyNew, keyOld); 
+    className = "org.cocktail.superplan.server.metier.ScolTransfertMap"; 
+    classProperties = (newAp, oldAp); 
+    externalName = "SCOLARITE.SCOL_TRANSFERT_MAP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolTransfertMap"; 
+    }; 
+    name = ScolTransfertMap; 
+    primaryKeyAttributes = (keyNew, keyOld); 
+    relationships = (
+        {
+            destination = MaquetteAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = keyNew; }); 
+            name = newAp; 
+        }, 
+        {
+            destination = MaquetteAp; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = keyOld; }); 
+            name = oldAp; 
+        }
+    ); 
+}

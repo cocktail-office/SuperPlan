@@ -1,0 +1,40 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {chercherDiplome = id; fermer = id; valider = id; }; 
+            CLASS = "edtscol.client.recherche.ECSelector"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bFermer = id; 
+                bValider = id; 
+                comboEcs = id; 
+                comboParcours = id; 
+                comboSemestres = id; 
+                eodExamenEntete = id; 
+                eodHabilitation = id; 
+                matPrefDip = id; 
+                tDiplome = id; 
+                tEc = id; 
+                tGrade = id; 
+                tInfos = id; 
+                tNiveau = id; 
+                tableExamenEntete = id; 
+                tableHabilitation = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {
+            CLASS = "fr.univlr.cri.javaclient.CRITree"; 
+            LANGUAGE = Java; 
+            OUTLETS = {treeTable = id; treeView = id; }; 
+            SUPERCLASS = "java.lang.Object"; 
+        }, 
+        {
+            CLASS = "fr.univlr.utilities.SwapView"; 
+            LANGUAGE = Java; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {
+            columnName = "C_DROITS"; 
+            externalType = NUMBER; 
+            name = cDroits; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (cDroits, libelle); 
+    className = "org.cocktail.superplan.server.metier.ResaObjetDroits"; 
+    classProperties = (libelle); 
+    externalName = "RESERVATION.RESA_OBJET_DROITS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (libelle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaObjetDroits"; 
+    }; 
+    name = ResaObjetDroits; 
+    primaryKeyAttributes = (cDroits); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = "IMGEO_ORDRE"; 
+            externalType = NUMBER; 
+            name = imgeoOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cLocal, dCreation, dModification, imgeoOrdre); 
+    className = "org.cocktail.superplan.server.metier.RepartBatImpGeo"; 
+    classProperties = (dCreation, dModification, implantationGeo, local); 
+    externalName = "GRHUM.REPART_BAT_IMP_GEO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dCreation, dModification, implantationGeo, local); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.RepartBatImpGeo"; 
+    }; 
+    name = RepartBatImpGeo; 
+    primaryKeyAttributes = (cLocal, imgeoOrdre); 
+    relationships = (
+        {
+            destination = ImplantationGeo; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = imgeoOrdre; sourceAttribute = imgeoOrdre; }); 
+            name = implantationGeo; 
+        }, 
+        {
+            destination = Local; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = local; 
+        }
+    ); 
+}

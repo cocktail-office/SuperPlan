@@ -1,0 +1,1 @@
+ -destination Sources -extension java -javaclient -model Resources/SuperPlan.eomodeld -packagedirs -subclassDestination Sources -templatedir _dev/_EOGenVelocityTemplates -verbose

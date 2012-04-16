@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "CTJ_DATE"; 
+            externalType = DATE; 
+            name = ctjDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CTJ_KEY"; 
+            externalType = NUMBER; 
+            name = ctjKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CTJ_NO_JOUR"; 
+            externalType = NUMBER; 
+            name = ctjNoJour; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CTS_KEY"; 
+            externalType = NUMBER; 
+            name = ctsKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ctjDate, ctjKey, ctjNoJour, ctsKey); 
+    className = "org.cocktail.superplan.server.metier.ContrainteJour"; 
+    classProperties = (contrainteHeures, contrainteSemaine, ctjDate, ctjNoJour); 
+    externalName = "EDTSCOL.CONTRAINTE_JOUR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (contrainteHeures, contrainteSemaine, ctjDate, ctjNoJour); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ContrainteJour"; 
+    }; 
+    name = ContrainteJour; 
+    primaryKeyAttributes = (ctjKey); 
+    relationships = (
+        {
+            destination = ContrainteHeure; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = ctjKey; sourceAttribute = ctjKey; }); 
+            name = contrainteHeures; 
+        }, 
+        {
+            destination = ContrainteSemaine; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ctsKey; sourceAttribute = ctsKey; }); 
+            name = contrainteSemaine; 
+        }
+    ); 
+}

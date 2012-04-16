@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_DEB_AFFECTATION"; 
+            externalType = DATE; 
+            name = dDebAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_AFFECTATION"; 
+            externalType = DATE; 
+            name = dFinAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = noSeqAffectation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        dDebAffectation, 
+        dFinAffectation, 
+        noDossierPers, 
+        noSeqAffectation, 
+        temValide
+    ); 
+    className = "org.cocktail.superplan.server.metier.Affectation"; 
+    classProperties = (
+        cStructure, 
+        dDebAffectation, 
+        dFinAffectation, 
+        individuUlr, 
+        noDossierPers, 
+        structureUlr, 
+        temValide
+    ); 
+    externalName = "MANGUE.AFFECTATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            dDebAffectation, 
+            dFinAffectation, 
+            individuUlr, 
+            noDossierPers, 
+            structureUlr, 
+            temValide
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Affectation"; 
+    }; 
+    name = Affectation; 
+    primaryKeyAttributes = (noSeqAffectation); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noDossierPers; }); 
+            name = individuUlr; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = structureUlr; 
+        }
+    ); 
+}

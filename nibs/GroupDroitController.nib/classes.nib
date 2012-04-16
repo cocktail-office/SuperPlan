@@ -1,0 +1,14 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = MyView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {ok = id; }; 
+            CLASS = "edtscol.client.GroupDroitController"; 
+            LANGUAGE = Java; 
+            OUTLETS = {mOption = id; nbIndiv = id; ok = id; treeView = id; typeChoix = id; }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

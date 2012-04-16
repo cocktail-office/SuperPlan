@@ -1,0 +1,211 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDSC_KEY"; 
+            externalType = NUMBER; 
+            name = fdscKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_BASE"; 
+            externalType = NUMBER; 
+            name = mecBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MEC_CODE"; 
+            externalType = VARCHAR2; 
+            name = mecCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "MEC_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = mecHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mecLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = mecLibelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "MEC_POINTS"; 
+            externalType = NUMBER; 
+            name = mecPoints; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_SESSION1"; 
+            externalType = VARCHAR2; 
+            name = mecSession1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MEC_SESSION2"; 
+            externalType = VARCHAR2; 
+            name = mecSession2; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        fannKey, 
+        fdscKey, 
+        mecBase, 
+        mecCode, 
+        mecHoraireEtu, 
+        mecKey, 
+        mecLibelle, 
+        mecLibelleCourt, 
+        mecPoints, 
+        mecSession1, 
+        mecSession2
+    ); 
+    className = "org.cocktail.superplan.server.metier.MaquetteEc"; 
+    classProperties = (
+        examenEntetes, 
+        fannKey, 
+        formationAnnee, 
+        maquetteRepartitionAps, 
+        maquetteResponsableEcs, 
+        mecBase, 
+        mecCode, 
+        mecHoraireEtu, 
+        mecLibelle, 
+        mecLibelleCourt, 
+        mecPoints, 
+        mecSession1, 
+        mecSession2, 
+        vParcoursEc, 
+        resaCouleurEc, 
+        fdscKey, 
+        maquetteRepartitionEcs
+    ); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            examenEntetes, 
+            fannKey, 
+            formationAnnee, 
+            maquetteRepartitionAps, 
+            maquetteResponsableEcs, 
+            mecBase, 
+            mecCode, 
+            mecHoraireEtu, 
+            mecLibelle, 
+            mecLibelleCourt, 
+            mecPoints, 
+            mecSession1, 
+            mecSession2, 
+            vParcoursEc, 
+            resaCouleurEc, 
+            fdscKey, 
+            maquetteRepartitionEcs
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteEc"; 
+    }; 
+    name = MaquetteEc; 
+    primaryKeyAttributes = (mecKey); 
+    relationships = (
+        {
+            destination = ExamenEntete; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = examenEntetes; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = FormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = formationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteRepartitionAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteRepartitionAps; 
+        }, 
+        {
+            destination = MaquetteRepartitionEc; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteRepartitionEcs; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = MaquetteResponsableEc; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteResponsableEcs; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = ResaCouleurEc; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = resaCouleurEc; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = VParcoursEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = vParcoursEc; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

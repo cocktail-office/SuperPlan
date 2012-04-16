@@ -1,0 +1,121 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "RO_ACCES"; 
+            externalType = VARCHAR2; 
+            name = roAcces; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "RO_KEY"; 
+            externalType = NUMBER; 
+            name = roKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RO_LIBELLE1"; 
+            externalType = VARCHAR2; 
+            name = roLibelle1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RO_LIBELLE2"; 
+            externalType = VARCHAR2; 
+            name = roLibelle2; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RO_RESERVABLE"; 
+            externalType = VARCHAR2; 
+            name = roReservable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "RTO_KEY"; 
+            externalType = NUMBER; 
+            name = rtoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (roKey, rtoKey, roLibelle1, roLibelle2, roAcces, salNumero, roReservable); 
+    className = "org.cocktail.superplan.server.metier.ResaObjet"; 
+    classProperties = (
+        roLibelle1, 
+        roLibelle2, 
+        roAcces, 
+        resaTypeObjet, 
+        salle, 
+        resaObjetReserves, 
+        roReservable, 
+        resaObjetDepositaires
+    ); 
+    externalName = "EDTSCOL.RESA_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            roLibelle1, 
+            roLibelle2, 
+            roAcces, 
+            resaTypeObjet, 
+            salle, 
+            resaObjetReserves, 
+            roReservable, 
+            resaObjetDepositaires
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaObjet"; 
+    }; 
+    name = ResaObjet; 
+    primaryKeyAttributes = (roKey); 
+    relationships = (
+        {
+            destination = ResaObjetDepositaire; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = roKey; }); 
+            name = resaObjetDepositaires; 
+        }, 
+        {
+            destination = ResaObjetReserve; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = roKey; }); 
+            name = resaObjetReserves; 
+        }, 
+        {
+            destination = ResaTypeObjet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rtoKey; sourceAttribute = rtoKey; }); 
+            name = resaTypeObjet; 
+        }, 
+        {
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+}

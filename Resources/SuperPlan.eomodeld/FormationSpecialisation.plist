@@ -1,0 +1,94 @@
+{
+    attributes = (
+        {
+            columnName = "FDIP_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdipCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_ABREVIATION"; 
+            externalType = VARCHAR2; 
+            name = fspnAbreviation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FSPN_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = fspnLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }
+    ); 
+    attributesUsedForLocking = (fdipCode, fspnAbreviation, fspnKey, fspnLibelle); 
+    className = "org.cocktail.superplan.server.metier.FormationSpecialisation"; 
+    classProperties = (
+        fspnAbreviation, 
+        fspnLibelle, 
+        habilitations, 
+        scolFormationDiplome, 
+        maquetteParcours, 
+        vParcoursAps
+    ); 
+    externalName = "SCOLARITE.SCOL_FORMATION_SPECIALISATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            fspnAbreviation, 
+            fspnLibelle, 
+            habilitations, 
+            maquetteParcours, 
+            scolFormationDiplome, 
+            vParcoursAps
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.FormationSpecialisation"; 
+    }; 
+    name = FormationSpecialisation; 
+    primaryKeyAttributes = (fspnKey); 
+    relationships = (
+        {
+            destination = FormationHabilitation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = habilitations; 
+        }, 
+        {
+            destination = MaquetteParcours; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = maquetteParcours; 
+        }, 
+        {
+            destination = FormationDiplome; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fdipCode; sourceAttribute = fdipCode; }); 
+            name = scolFormationDiplome; 
+        }, 
+        {
+            destination = VParcoursAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = vParcoursAps; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

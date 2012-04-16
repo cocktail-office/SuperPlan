@@ -1,0 +1,22 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {ajouterRessource = id; supprimerRessource = id; }; 
+            CLASS = "edtscol.client.panier.Panier"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bAjoutRessource = id; 
+                bSupRessource = id; 
+                currentView = id; 
+                eodRessources = id; 
+                taCommentaire = id; 
+                tabsRessources = id; 
+                tvRessources = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {CLASS = "javax.swing.JTabbedPane"; LANGUAGE = Java; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

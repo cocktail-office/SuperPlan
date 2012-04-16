@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, salNumero); 
+    className = "org.cocktail.superplan.server.metier.DepositaireSalles"; 
+    classProperties = (cStructure, salle, structureUlr); 
+    externalName = "GRHUM.DEPOSITAIRE_SALLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (salle, structureUlr); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.DepositaireSalles"; 
+    }; 
+    name = DepositaireSalles; 
+    primaryKeyAttributes = (cStructure, salNumero); 
+    relationships = (
+        {
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }, 
+        {
+            destination = StructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = structureUlr; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

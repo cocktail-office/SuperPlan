@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            columnName = "GGRP_KEY_1"; 
+            externalType = NUMBER; 
+            name = ggrpKey1; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GGRP_KEY_2"; 
+            externalType = NUMBER; 
+            name = ggrpKey2; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ggrpKey1, ggrpKey2); 
+    className = "org.cocktail.superplan.server.metier.ScolGroupeInclusion"; 
+    classProperties = (ggrpKey1, ggrpKey2, groupeFils, groupePere, scolGroupeInclusions); 
+    externalName = "SCOLARITE.SCOL_GROUPE_INCLUSION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (groupeFils, groupePere, scolGroupeInclusions); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolGroupeInclusion"; 
+    }; 
+    name = ScolGroupeInclusion; 
+    primaryKeyAttributes = (ggrpKey1, ggrpKey2); 
+    relationships = (
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey2; }); 
+            name = groupeFils; 
+        }, 
+        {
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey1; }); 
+            name = groupePere; 
+        }, 
+        {
+            destination = ScolGroupeInclusion; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = ggrpKey2; sourceAttribute = ggrpKey1; }); 
+            name = scolGroupeInclusions; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

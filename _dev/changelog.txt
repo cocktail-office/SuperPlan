@@ -1,0 +1,58 @@
+changelog.txt SuperPlan
+-----------------------
+
+v1.4.0.16 du 31/01/2012
+- Correction et amélioration de l'impression de multiples salles
+- Contrôle jours fériés lors de déplacement de réservation
+- Contrôle jours fériés lors de la gestion des semaines
+- Modification du paramètre APP_CONTROLE_APS_OCCUPATION: ajout du BOF qui permet de contrôler pour juste avertir d'une incompatibilité sans bloquer
+- Modification du paramètre APP_CONTROLE_GROUPES_OCCUPATION: si NO, aucun (mais alors AUCUN) contrôle sur les résas avec groupe
+- Modification du planning renvoyé au Serveur de Planning pour un individu: concaténation des libellés d'ECs identiques + ajout du code EC
+- Prise en compte du champ GRHUM.SALLES.D_ANNULATION pour ne plus afficher les salles annulées
+- Planning étudiant: prise en compte des réservations avec groupes vides même si l'étudiant est inscrit partiellement aux groupes
+- Planning étudiant et enseignant (flux ics notamment) : correction des libellés qui pouvaient apparaitre en doublon
+- Ajout des codes EC un peu partout dans l'interface et les flux ics
+- Ajout d'un message d'avertissement quand on ajoute une salle à choix hors du mode expert
+- Refonte de la recherche de réservations par personne
+- Validation automatique de la réservation (validation dépositaire salle) lors d'une modification de résa par un dépositaire (DT Cocktail #4325)
+- paramètre APP_AUTORISE_MODIF_EXAMEN_ETAT_3 ok pour la suppression (ne permettait pas de supprimer la résa avant) (DT Cocktail #4329)
+- Autorise à placer plusieurs fois un examen avec des groupes différents...
+- Log des actions de modification et de suppression sur les résas avec consultation de l'historique (voir paramètre APP_STRUCTURE_LOGS_HISTORIQUE) (DT Cocktail #4353 et d'autres demandes)
+- Ajout de 2 paramètres pour forcer la saisie d'un motif de modification ou de suppression (APP_EXIGE_MOTIF_MODIFICATION et APP_EXIGE_MOTIF_SUPPRESSION)
+
+v1.4.0.14 du 16/01/2012
+- Affichage d'un carré bleu (comme le rouge pour les salles) sur les réservations d'objets validées (visible depuis le planning d'un objet) (DT Cocktail #4159)
+- Lors de la validation d'une réservation d'objet par le dépositaire, ajout dans le mail de confirmation des dates de réservation (DT Cocktail #4159)
+- Contrôles plus fins lors de la réservation d'un enseignement avec groupe, dans le cas de groupes étudiants vides (sans étudiants ventilés)
+- Ajout d'une préférence utilisateur pour choisir le type de réservation par défaut lors d'une création dans l'inspecteur (réunion, enseignement, ...) (DT Cocktail #4166)
+- Impression multi-salles: couleurs changées dans le pdf, et correction de l'export Excel qui n'affichait que la dernière salle (DT Cocktail #4143 - Point 1)
+- L'ajout de groupes de personnes dans le panier (en création et en modification) ne prenait pas en compte lesdites personnes pour l'envoi de mail aux occupants... corrigé (DT Cocktail #4195)
+- Sélection par défaut du semestre en cours lors de la recherche d'enseignement
+
+v1.4.0.11 du 20/12/2011
+- Limite la recherche de salle par groupe (arborescence) aux salles réservables
+- Panneau de mail aux occupants quand on modifie une réservation par déplacement graphique (avant envoyait le mail aux occupants systématiquement)
+- Contrôles d'occupation des APs et groupes plus fins (contrôles APs à choix et facultatifs, contrôles des étudiants des groupes par IPs)
+
+v1.4.0.7 du 06/12/2011
+- Changement dans le gestion des contraintes: clic-droit pour sélectionner/désélectionner entièrement une semaine (à la place du pseudo doucle-clic)
+- Depuis le tableau de bord des APs, dans la résa automatique, option pour ne pas replacer des réservations sur des semaines où l'AP est déjà placé
+- Correction de l'affichage des formations de préférences un peu partout, qui ne se faisait pas en fonction de l'année sélectionnée dans le pop-up
+- Ajout d'un code couleur intermédiaire (entre vert et touge) dans la gestion des contraintes, pour indiquer une semaine ni totalement libre ni totalement indisponible
+- Affichage de tous les groupes de semestre en recherche de formation
+- Correction de la directAction pour l'agenda d'une personne (en direct ou pour le serveur de planning) avec des réservations type Semestre
+- Correction de la recherche de personnes, pour les individus qui n'ont pas de categorie principale supann (on les voit maintenant dans non étudiants)
+
+v1.4.0.4 du 25/11/2011
+- Ajout de la gestion des contraintes par individu
+- Retour de l'affichage des salles dont on est dépositaire par défaut en début de recherche de salle
+- Ajout des réservations type Semestre dans l'emploi du temps des étudiants (flux ics)
+- Ajout d'une colonne code EC dans le tableau de bord des APs
+- Ajout d'une info bulle dans les popup où c'est utile
+- Correction d'un traitement trop long sur les vérifications pour les examens: vérifiait des groupes inutiles...
+- Correction d'un bug sur les controles d'occupation (individus, salles, objets) dans la réservation automatique depuis le tableau de bord des APs
+- Amélioration de la fenêtre d'affichage du détail d'une résa (clic gauche)
+- Avertissement lors de la mise en panier de plusieurs salles sans avoir coché "à choix"
+- Correction du tri de colonnes dans le tableau de bord des APs (et ajout sur les heures)
+- Correction sur la recherche de formations: une personne sans aucun droit (sur aucune formation) voyait toutes les formations
+- Ajout d'un paramètre APP_DROITS_SUR_CONTRAINTES_INDIVIDUS, pour filter ou non les agents ayant accès aux contraintes d'individus

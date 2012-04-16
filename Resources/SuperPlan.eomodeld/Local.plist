@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = APPELLATION; 
+            externalType = VARCHAR2; 
+            name = appellation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }
+    ); 
+    attributesUsedForLocking = (appellation, cLocal); 
+    className = "org.cocktail.superplan.server.metier.Local"; 
+    classProperties = (appellation, cLocal, salless, repartBatImpGeos); 
+    externalName = "GRHUM.LOCAL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (appellation, cLocal, salless, repartBatImpGeos); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Local"; 
+    }; 
+    name = Local; 
+    primaryKeyAttributes = (cLocal); 
+    relationships = (
+        {
+            destination = RepartBatImpGeo; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = repartBatImpGeos; 
+        }, 
+        {
+            destination = Salles; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = salless; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

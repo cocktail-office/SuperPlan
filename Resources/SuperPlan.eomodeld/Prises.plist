@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            columnName = "PRI_CODE"; 
+            externalType = VARCHAR2; 
+            name = priCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRI_ORDRE"; 
+            externalType = NUMBER; 
+            name = priOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRI_TYPE"; 
+            externalType = VARCHAR2; 
+            name = priType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (priCode, priOrdre, priType, salNumero); 
+    className = "org.cocktail.superplan.server.metier.Prises"; 
+    classProperties = (priOrdre, priType); 
+    externalName = "SALLE.PRISES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (priOrdre, priType); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Prises"; 
+    }; 
+    name = Prises; 
+    primaryKeyAttributes = (priCode); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

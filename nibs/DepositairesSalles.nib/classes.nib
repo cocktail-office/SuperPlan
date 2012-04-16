@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                chargerPourSemaine = id; 
+                modifierSalle = id; 
+                rechercherSalle = id; 
+                refuserSalle = id; 
+                validerSalle = id; 
+            }; 
+            CLASS = "edtscol.client.DepositairesSalles"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bModifier = id; 
+                bRechercher = id; 
+                bRefuser = id; 
+                bValider = id; 
+                comboAnnee = id; 
+                comboLocal = id; 
+                eodPeriodicites = id; 
+                eodResa = id; 
+                eodRessource = id; 
+                eodSalle = id; 
+                lblAide = id; 
+                matOccupants = id; 
+                tSemaine = id; 
+                tablePeriodiciteSalle = id; 
+                tablePeriodicites = id; 
+                tableRessource = id; 
+                tableSalle = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {CLASS = "javax.swing.JLabel"; LANGUAGE = Java; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

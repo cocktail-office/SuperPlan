@@ -1,0 +1,72 @@
+{
+    attributes = (
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_SAL_DATE"; 
+            externalType = DATE; 
+            name = resaSalDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_SAL_ETAT"; 
+            externalType = VARCHAR2; 
+            name = resaSalEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "RESA_SAL_KEY"; 
+            externalType = NUMBER; 
+            name = resaSalKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (resaKey, resaSalDate, resaSalEtat, resaSalKey, salNumero); 
+    className = "org.cocktail.superplan.server.metier.ResaSalles"; 
+    classProperties = (resaSalDate, resaSalEtat, reservation, salle); 
+    externalName = "EDTSCOL.RESA_SALLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (resaSalDate, resaSalEtat, reservation, salle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaSalles"; 
+    }; 
+    name = ResaSalles; 
+    primaryKeyAttributes = (resaSalKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

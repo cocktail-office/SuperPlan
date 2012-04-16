@@ -1,0 +1,114 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_NIVEAU"; 
+            externalType = NUMBER; 
+            name = fhabNiveau; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_OUVERT"; 
+            externalType = VARCHAR2; 
+            name = fhabOuvert; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FSPN_KEY"; 
+            externalType = NUMBER; 
+            name = fspnKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fhabKey, fhabNiveau, fhabOuvert, fspnKey); 
+    className = "org.cocktail.superplan.server.metier.FormationHabilitation"; 
+    classProperties = (
+        droitDiplomes, 
+        fannKey, 
+        fhabNiveau, 
+        fhabOuvert, 
+        formationSpecialisation, 
+        formationAnnee, 
+        ctrlParamHabilitations, 
+        prefScols
+    ); 
+    externalName = "SCOLARITE.SCOL_FORMATION_HABILITATION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            droitDiplomes, 
+            fannKey, 
+            fhabNiveau, 
+            fhabOuvert, 
+            formationSpecialisation, 
+            formationAnnee, 
+            ctrlParamHabilitations, 
+            prefScols
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.FormationHabilitation"; 
+    }; 
+    name = FormationHabilitation; 
+    primaryKeyAttributes = (fhabKey); 
+    relationships = (
+        {
+            destination = CtrlParamHabilitation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = ctrlParamHabilitations; 
+        }, 
+        {
+            destination = ScolDroitDiplome; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = droitDiplomes; 
+        }, 
+        {
+            destination = FormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = formationAnnee; 
+        }, 
+        {
+            destination = FormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = fspnKey; }); 
+            name = formationSpecialisation; 
+        }, 
+        {
+            destination = PrefScol; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = (
+                {destinationAttribute = fannKey; sourceAttribute = fannKey; }, 
+                {destinationAttribute = fhabKey; sourceAttribute = fhabKey; }
+            ); 
+            name = prefScols; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

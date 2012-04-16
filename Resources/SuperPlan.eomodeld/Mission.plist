@@ -1,0 +1,86 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_CORPS"; 
+            externalType = VARCHAR2; 
+            name = cCorps; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "FOU_ORDRE"; 
+            externalType = NUMBER; 
+            name = fouOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MIS_DEBUT"; 
+            externalType = DATE; 
+            name = misDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MIS_ETAT"; 
+            externalType = VARCHAR2; 
+            name = misEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "MIS_FIN"; 
+            externalType = DATE; 
+            name = misFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MIS_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = misMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 400; 
+        }, 
+        {
+            columnName = "TIT_ORDRE"; 
+            externalType = NUMBER; 
+            name = titOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cCorps, fouOrdre, misDebut, misEtat, misFin, misMotif, titOrdre); 
+    className = "org.cocktail.superplan.server.metier.Mission"; 
+    classProperties = (cCorps, fournis, misDebut, misEtat, misFin, misMotif, titreMission); 
+    externalName = "jefy_mission.MISSION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cCorps, fournis, misDebut, misEtat, misFin, misMotif, titOrdre); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Mission"; 
+    }; 
+    name = Mission; 
+    primaryKeyAttributes = (fouOrdre, misDebut); 
+    relationships = (
+        {
+            destination = FournisUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fouOrdre; sourceAttribute = fouOrdre; }); 
+            name = fournis; 
+        }, 
+        {
+            destination = TitreMission; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = titOrdre; sourceAttribute = titOrdre; }); 
+            name = titreMission; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

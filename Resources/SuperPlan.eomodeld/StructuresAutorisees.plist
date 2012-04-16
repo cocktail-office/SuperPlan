@@ -1,0 +1,110 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = ACCES; 
+            externalType = VARCHAR2; 
+            name = acces; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ALIAS_GROUPE"; 
+            externalType = VARCHAR2; 
+            name = aliasGroupe; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = AUTORISE; 
+            externalType = NUMBER; 
+            name = autorise; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LIBELLE_GROUPE"; 
+            externalType = VARCHAR2; 
+            name = libelleGroupe; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "NUMERO_GROUPE"; 
+            externalType = NUMBER; 
+            name = numeroGroupe; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NUMERO_PERE"; 
+            externalType = VARCHAR2; 
+            name = numeroPere; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TYPE_STRUCT"; 
+            externalType = VARCHAR2; 
+            name = typeStruct; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        acces, 
+        aliasGroupe, 
+        autorise, 
+        libelleGroupe, 
+        numeroGroupe, 
+        numeroPere, 
+        persId, 
+        typeStruct
+    ); 
+    className = "org.cocktail.superplan.server.metier.StructuresAutorisees"; 
+    classProperties = (
+        acces, 
+        aliasGroupe, 
+        autorise, 
+        libelleGroupe, 
+        numeroGroupe, 
+        numeroPere, 
+        persId, 
+        typeStruct
+    ); 
+    externalName = "GRHUM.V_STRUCTURES_AUTORISEES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            acces, 
+            aliasGroupe, 
+            autorise, 
+            libelleGroupe, 
+            numeroGroupe, 
+            numeroPere, 
+            persId, 
+            typeStruct
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.StructuresAutorisees"; 
+    }; 
+    name = StructuresAutorisees; 
+    primaryKeyAttributes = (numeroGroupe); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

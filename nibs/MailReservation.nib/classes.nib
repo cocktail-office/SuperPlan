@@ -1,0 +1,20 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; valider = id; }; 
+            CLASS = "edtscol.client.MailReservation"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bEnvoyer = id; 
+                tCC = id; 
+                tDest = id; 
+                tSujet = id; 
+                taCommentaire = id; 
+                taMessage = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

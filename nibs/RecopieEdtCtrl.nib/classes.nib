@@ -1,0 +1,36 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {commencer = id; rechercherHabilitation = id; }; 
+            CLASS = "edtscol.client.RecopieEdtCtrl"; 
+            LANGUAGE = Java; 
+            OUTLETS = {
+                bChercherHab = id; 
+                bCommencer = id; 
+                ckCm = id; 
+                ckEnseignants = id; 
+                ckEnseignements = id; 
+                ckGroupesEtudiants = id; 
+                ckSalles = id; 
+                ckTd = id; 
+                ckTp = id; 
+                comboAnnee = id; 
+                comboAnneeDest = id; 
+                comboParcours = id; 
+                comboSemestre = id; 
+                eodErreur = id; 
+                eodHabilitation = id; 
+                matTypeRecopie = id; 
+                tDiplome = id; 
+                tGrade = id; 
+                tSemaineDest = id; 
+                tSemaines = id; 
+                tableErreur = id; 
+                tableHabilitation = id; 
+            }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "LOG_KEY"; 
+            externalType = NUMBER; 
+            name = logKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OCCUPANT_KEY"; 
+            externalType = NUMBER; 
+            name = logOccupantKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_HCOMP_REC"; 
+            externalType = NUMBER; 
+            name = logOldHcompRec; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = logOldNoIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LOG_OLD_RESA_KEY"; 
+            externalType = NUMBER; 
+            name = logOldResaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (logKey, logOccupantKey, logOldHcompRec, logOldNoIndividu, logOldResaKey); 
+    className = "org.cocktail.superplan.server.metier.LogReservationOccupant"; 
+    classProperties = (individuUlr, logOldHcompRec, logOldResaKey); 
+    externalName = "EDTSCOL.LOG_RESERVATION_OCCUPANT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (individuUlr, logOldHcompRec, logOldResaKey); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.LogReservationOccupant"; 
+    }; 
+    name = LogReservationOccupant; 
+    primaryKeyAttributes = (logOccupantKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = logOldNoIndividu; }); 
+            name = individuUlr; 
+        }
+    ); 
+}

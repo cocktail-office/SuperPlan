@@ -1,0 +1,8 @@
+{
+    "Fetch Spec" = {
+        class = EOFetchSpecification; 
+        entityName = VTreeObjet; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+    }; 
+}

@@ -1,0 +1,225 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ANNEE_CIVILE"; 
+            externalType = NUMBER; 
+            name = anneeCivile; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "COLOR_EC"; 
+            externalType = VARCHAR2; 
+            name = colorEc; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "COMMENT_SCOL"; 
+            externalType = NUMBER; 
+            name = commentScol; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DIP_EDT_PERS"; 
+            externalType = NUMBER; 
+            name = dipEdtPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DIP_EDT_SAL"; 
+            externalType = NUMBER; 
+            name = dipEdtSal; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DISP_EXAM"; 
+            externalType = NUMBER; 
+            name = dispExam; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DISP_PAR_COM"; 
+            externalType = NUMBER; 
+            name = dispParCom; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "HEURE_DEB_IMPRESS"; 
+            externalType = NUMBER; 
+            name = heureDebImpress; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "HEURE_FIN_IMPRESS"; 
+            externalType = NUMBER; 
+            name = heureFinImpress; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "P_USER_KEY"; 
+            externalType = NUMBER; 
+            name = pUserKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PAS_MAIL_HORS_SEMAINE"; 
+            externalType = NUMBER; 
+            name = pasMailHorsSemaine; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SELECTION_GROUPE_MULTIPLE"; 
+            externalType = VARCHAR2; 
+            name = selectionGroupeMultiple; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "SEND_MAIL_DEPOSITAIRES"; 
+            externalType = VARCHAR2; 
+            name = sendMailDepositaires; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "SEND_MAIL_OCCUPANTS"; 
+            externalType = VARCHAR2; 
+            name = sendMailOccupants; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "USE_RESP_AP"; 
+            externalType = VARCHAR2; 
+            name = useRespAp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "USE_TOOLTIP_PLANNING"; 
+            externalType = VARCHAR2; 
+            name = useTooltipPlanning; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DEFAULT_VISIBILITE"; 
+            externalType = VARCHAR2; 
+            name = defaultVisibilite; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "AFF_HORAIRES_HAMAC"; 
+            externalType = NUMBER; 
+            name = affHorairesHamac; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INTERVALLE_MINIMUM"; 
+            externalType = NUMBER; 
+            name = intervalleMinimum; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DEFAULT_TYPE_RESA"; 
+            externalType = VARCHAR2; 
+            name = defaultTypeResa; 
+            valueClassName = NSString; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, pUserKey); 
+    className = "org.cocktail.superplan.server.metier.PrefUser"; 
+    classProperties = (
+        commentScol, 
+        dipEdtPers, 
+        dipEdtSal, 
+        dispParCom, 
+        heureDebImpress, 
+        heureFinImpress, 
+        dispExam, 
+        useRespAp, 
+        anneeCivile, 
+        pasMailHorsSemaine, 
+        colorEc, 
+        sendMailOccupants, 
+        sendMailDepositaires, 
+        selectionGroupeMultiple, 
+        useTooltipPlanning, 
+        individu, 
+        defaultVisibilite, 
+        affHorairesHamac, 
+        intervalleMinimum, 
+        defaultTypeResa
+    ); 
+    externalName = "EDTSCOL.PREF_USER"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            commentScol, 
+            dipEdtPers, 
+            dipEdtSal, 
+            dispParCom, 
+            heureDebImpress, 
+            heureFinImpress, 
+            dispExam, 
+            useRespAp, 
+            anneeCivile, 
+            pasMailHorsSemaine, 
+            colorEc, 
+            sendMailOccupants, 
+            sendMailDepositaires, 
+            selectionGroupeMultiple, 
+            useTooltipPlanning, 
+            individu, 
+            defaultVisibilite, 
+            affHorairesHamac, 
+            intervalleMinimum, 
+            defaultTypeResa
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.PrefUser"; 
+    }; 
+    name = PrefUser; 
+    primaryKeyAttributes = (pUserKey); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individu; 
+        }
+    ); 
+}

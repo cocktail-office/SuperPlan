@@ -1,0 +1,30 @@
+{
+    attributes = (
+        {
+            columnName = "FOU_ORDRE"; 
+            externalType = NUMBER; 
+            name = fouOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (fouOrdre, persId); 
+    className = "org.cocktail.superplan.server.metier.FournisUlr"; 
+    classProperties = (persId); 
+    externalName = "GRHUM.FOURNIS_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (persId); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.FournisUlr"; 
+    }; 
+    name = FournisUlr; 
+    primaryKeyAttributes = (fouOrdre); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

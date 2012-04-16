@@ -1,0 +1,54 @@
+{
+    attributes = (
+        {
+            columnName = "COLOR_CODE"; 
+            externalType = VARCHAR2; 
+            name = colorCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MEC_KEY"; 
+            externalType = NUMBER; 
+            name = mecKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (mecKey, fannKey, colorCode); 
+    className = "org.cocktail.superplan.server.metier.ResaCouleurEc"; 
+    classProperties = (colorCode, maquetteEc, formationAnnee); 
+    externalName = "EDTSCOL.RESA_COULEUR_EC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (colorCode, formationAnnee, maquetteEc); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ResaCouleurEc"; 
+    }; 
+    name = ResaCouleurEc; 
+    primaryKeyAttributes = (mecKey, fannKey); 
+    relationships = (
+        {
+            destination = FormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = formationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = mecKey; }); 
+            name = maquetteEc; 
+        }
+    ); 
+}

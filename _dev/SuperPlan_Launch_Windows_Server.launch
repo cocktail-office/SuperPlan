@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${java_executable}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-Xrs  -DWORootDirectory=&quot;C:/Apple&quot; -DWOLocalRootDirectory=&quot;C:/Apple/Local&quot; -DWOUserDirectory=&quot;${project_loc}/dist/${project_name}.woa&quot; -DWOApplicationClass=org.cocktail.superplan.server.Application -DWOPlatform=Windows -DWODirectConnectEnabled=true -DWOAllowsConcurrentRequestHandling=true -DWOAutoOpenInBrowser=false -DWOAutoOpenClientApplication=false -classpath WOBootstrap.jar com.webobjects._bootstrap.WOBootstrap  -WOPort 1381 -Xss15m -Xmx150m -DWOSessionTimeOut=3600"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${project_loc}/dist/${project_name}.woa"/>
+</launchConfiguration>

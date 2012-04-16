@@ -1,0 +1,85 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DATE_VALIDATION"; 
+            externalType = DATE; 
+            name = dateValidation; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU_VAL"; 
+            externalType = NUMBER; 
+            name = noIndividuVal; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_ETAT"; 
+            externalType = VARCHAR2; 
+            name = resaEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_OBJET_KEY"; 
+            externalType = NUMBER; 
+            name = resaObjetKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RO_KEY"; 
+            externalType = NUMBER; 
+            name = roKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (resaEtat, resaObjetKey); 
+    className = "org.cocktail.superplan.server.metier.ReservationObjet"; 
+    classProperties = (resaEtat, individuValideur, resaObjet, dateValidation, reservation); 
+    externalName = "EDTSCOL.RESERVATION_OBJET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (resaEtat, individuValideur, resaObjet, dateValidation, reservation); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ReservationObjet"; 
+    }; 
+    name = ReservationObjet; 
+    primaryKeyAttributes = (resaObjetKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividuVal; }); 
+            name = individuValideur; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ResaObjet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = roKey; sourceAttribute = roKey; }); 
+            name = resaObjet; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }
+    ); 
+}

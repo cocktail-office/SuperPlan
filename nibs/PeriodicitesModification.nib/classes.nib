@@ -1,0 +1,14 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {annuler = id; validerSemainesSelectionnees = id; validerToutesSemaines = id; }; 
+            CLASS = "edtscol.client.gestionreservation.PeriodicitesModification"; 
+            LANGUAGE = Java; 
+            OUTLETS = {bSelectionnees = id; eodDates = id; lblInfos = id; tableDates = id; }; 
+            SUPERCLASS = "com.webobjects.eoapplication.EOInterfaceController"; 
+        }, 
+        {CLASS = "javax.swing.JLabel"; LANGUAGE = Java; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,177 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_BONIFIABLE"; 
+            externalType = NUMBER; 
+            name = msemBonifiable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_DATE_DEBUT"; 
+            externalType = DATE; 
+            name = msemDateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_DATE_FIN"; 
+            externalType = DATE; 
+            name = msemDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MSEM_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = msemHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_NOTE_BASE"; 
+            externalType = NUMBER; 
+            name = msemNoteBase; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_NOTE_ELIMINATION"; 
+            externalType = NUMBER; 
+            name = msemNoteElimination; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MSEM_NOTE_OBTENTION"; 
+            externalType = NUMBER; 
+            name = msemNoteObtention; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MSEM_ORDRE"; 
+            externalType = NUMBER; 
+            name = msemOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_SEMAINE_SESSION1"; 
+            externalType = NUMBER; 
+            name = msemSemaineSession1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MSEM_SEMAINE_SESSION2"; 
+            externalType = NUMBER; 
+            name = msemSemaineSession2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        fannKey, 
+        msemBonifiable, 
+        msemDateDebut, 
+        msemDateFin, 
+        msemHoraireEtu, 
+        msemKey, 
+        msemNoteBase, 
+        msemNoteElimination, 
+        msemNoteObtention, 
+        msemOrdre, 
+        msemSemaineSession1, 
+        msemSemaineSession2
+    ); 
+    className = "org.cocktail.superplan.server.metier.MaquetteSemestre"; 
+    classProperties = (
+        msemBonifiable, 
+        msemDateDebut, 
+        msemDateFin, 
+        msemHoraireEtu, 
+        msemNoteBase, 
+        msemNoteElimination, 
+        msemNoteObtention, 
+        msemOrdre, 
+        msemSemaineSession1, 
+        msemSemaineSession2, 
+        repartitionUes, 
+        scolFormationAnnee, 
+        msemKey, 
+        maquetteRepartitionSems
+    ); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_SEMESTRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            msemBonifiable, 
+            msemDateDebut, 
+            msemDateFin, 
+            msemHoraireEtu, 
+            msemNoteBase, 
+            msemNoteElimination, 
+            msemNoteObtention, 
+            msemOrdre, 
+            msemSemaineSession1, 
+            msemSemaineSession2, 
+            repartitionUes, 
+            scolFormationAnnee
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteSemestre"; 
+    }; 
+    name = MaquetteSemestre; 
+    primaryKeyAttributes = (msemKey); 
+    relationships = (
+        {
+            destination = MaquetteRepartitionSem; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = maquetteRepartitionSems; 
+        }, 
+        {
+            destination = MaquetteRepartitionUe; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = repartitionUes; 
+        }, 
+        {
+            destination = FormationAnnee; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = scolFormationAnnee; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

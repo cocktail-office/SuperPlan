@@ -1,0 +1,85 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, cStructurePere, llStructure, persId); 
+    className = "org.cocktail.superplan.server.metier.VGroupePersonne"; 
+    classProperties = (
+        cStructure, 
+        cStructurePere, 
+        llStructure, 
+        persId, 
+        toPersonne, 
+        toStructurePere, 
+        toStructuresFilles
+    ); 
+    externalName = "GRHUM.V_GROUPE_PERSONNE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            llStructure, 
+            persId, 
+            toPersonne, 
+            toStructurePere, 
+            toStructuresFilles
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VGroupePersonne"; 
+    }; 
+    name = VGroupePersonne; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = Personne; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toPersonne; 
+        }, 
+        {
+            destination = VGroupePersonne; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = toStructurePere; 
+        }, 
+        {
+            destination = VGroupePersonne; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructurePere; sourceAttribute = cStructure; }); 
+            name = toStructuresFilles; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

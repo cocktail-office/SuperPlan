@@ -1,0 +1,8 @@
+Importer les users EDTSCOL et RESERVATION (par l'outil d'import de Toad par exemple) à partir du fichier "exports_edtscol_v1.3.1_reservation.dmp".
+
+Rem: les users EDTSCOL et RESERVATION doivent être créés avant et vides.
+
+Rem 2: un avertissement "normal" peut se produire, sans conséquences pour la suite, donc l'ignorer:
+	IMP-00041: Attention : objet créé avec erreurs de compilation
+	"CREATE FORCE VIEW "EDTSCOL"."V_RESA_OBJET_EDT" etc...
+
